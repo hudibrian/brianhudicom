@@ -1,1 +1,1 @@
-export const Config = { apiUrl: 'https://brianhudi.org' };
+export const Config = { apiUrl: process.env.apiUrl };
