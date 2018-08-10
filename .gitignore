@@ -1,5 +1,8 @@
+.next
 node_modules
-npm-debug.log
-yarn-error.log
-wordpress/wp-content/languages/
-data
+.idea
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
