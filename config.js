@@ -1,1 +1,1 @@
-export const Config = { apiUrl: process.env.apiUrl };
+export const Config = { apiUrl: process.env.WP_URL };
