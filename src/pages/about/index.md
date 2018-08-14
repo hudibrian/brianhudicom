@@ -6,3 +6,5 @@ title: About
 
 I am a full stack software developer with a love for JavaScript.\
 This website is actively under development and will be rich with more content very soon.
+
+Contact me at: bshudi@gmail.com
