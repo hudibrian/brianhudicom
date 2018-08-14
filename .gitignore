@@ -1,9 +1,9 @@
-.next
+# Project dependencies
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-.idea
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
-now.json
+.cache/
+# Build directory
+public/
+static/admin/*.bundle.*
+.DS_Store
+yarn-error.log
