@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
 export default class IndexPage extends React.Component {
+  window.location.href = 'https://www.brianhudi.com/about';
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
