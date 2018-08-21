@@ -6,5 +6,6 @@ description: this is temp
 tags:
   - new
 ---
+![](/img/chemex.jpg)
 
 lorem ipsum and stuff
