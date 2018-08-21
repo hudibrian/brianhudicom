@@ -7,4 +7,6 @@ tags:
   - new
   - frontmatter
 ---
+![](/img/chemex.jpg)
+
 lorem ipsum and stuff
