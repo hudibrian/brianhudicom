@@ -4,7 +4,7 @@ module.exports = {
   siteTitleAlt: "Brian Hudi's Blog", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://brianhudi.com", // Domain of your website without pathPrefix.
-  pathPrefix: "", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+  pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "A blog and personal website where Brian Hudi will display his teachings and portfolio.", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "292290951352393", // FB Application ID for using app insights

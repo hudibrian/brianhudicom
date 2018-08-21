@@ -1,7 +1,7 @@
 {
   "name": "brianhudi.com",
   "description": "My personal website and blog",
-  "version": "0.1",
+  "version": "1.0.0",
   "author": "Brian Hudi <bshudi@gmail.com>",
   "dependencies": {
     "gatsby": "next",
