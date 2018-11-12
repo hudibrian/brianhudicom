@@ -1,240 +1,189 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
-
 const path = require('path');
-const { flow, isNull, isArray, isString, each, filter, reduce, range, flatten, uniq, includes, get, size } = require('lodash/fp');
-const { createFilePath } = require('gatsby-source-filesystem');
+const _ = require('lodash');
+const fs = require('fs');
+const webpackLodashPlugin = require('lodash-webpack-plugin');
+const siteConfig = require('./data/SiteConfig');
 const {
-  CONTENT_PER_PAGE,
-  POST,
-  PORTFOLIO,
-  RESUME,
-} = require('./src/constants');
+  createPaginationPages,
+  createLinkedPages
+} = require('gatsby-pagination');
 
-exports.onCreateWebpackConfig = ({
-  stage,
-  plugins,
-  actions,
-}) => {
-  actions.setWebpackConfig({
-    externals: {
-      document: true,
-      discus_config: true,
-    },
-    resolve: {
-      alias: {
-        '~': path.resolve(__dirname, 'src'),
-      },
-    },
-    plugins: [
-      plugins.define({
-        __DEVELOPMENT__: stage === 'develop' || stage === 'develop-html',
-      }),
-    ],
-  });
+exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+  const { createNodeField } = boundActionCreators;
+  let slug;
+  if (node.internal.type === 'MarkdownRemark') {
+    const fileNode = getNode(node.parent);
+    const parsedFilePath = path.parse(fileNode.relativePath);
+    if (
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
+    ) {
+      slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+    } else if (
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
+    ) {
+      slug = `/${_.kebabCase(node.frontmatter.title)}`;
+    } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
+      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
+    } else if (parsedFilePath.dir === '') {
+      slug = `/${parsedFilePath.name}/`;
+    } else {
+      slug = `/${parsedFilePath.dir}/`;
+    }
+    createNodeField({ node, name: 'slug', value: slug });
+  }
 };
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
-  const contentTypes = [POST, PORTFOLIO, RESUME];
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const post = path.resolve('./src/templates/Post.jsx');
-    const list = path.resolve('./src/templates/List.jsx');
-    const taggedList = path.resolve('./src/templates/TaggedList.jsx');
-    const categorizedList = path.resolve('./src/templates/CategorizedList.jsx');
-    const resume = path.resolve('./src/templates/Resume.jsx');
-    const portfolios = path.resolve('./src/templates/Portfolios.jsx');
-    const portfolio = path.resolve('./src/templates/Portfolio.jsx');
+    const indexPage = path.resolve('src/templates/index.jsx');
+    const postPage = path.resolve('src/templates/post.jsx');
+    const tagPage = path.resolve('src/templates/tag.jsx');
+    const categoryPage = path.resolve('src/templates/category.jsx');
+    const authorPage = path.resolve('src/templates/author.jsx');
+
+    if (
+      !fs.existsSync(
+        path.resolve(`content/${siteConfig.blogAuthorDir}/authors/`)
+      )
+    ) {
+      reject(
+        "The 'authors' folder is missing within the 'blogAuthorDir' folder."
+      );
+    }
 
     resolve(
-      graphql(`
-        {
-          allMarkdownRemark(limit: 10000) {
-            edges {
-              node {
-                frontmatter {
-                  path
-                  category
-                  tags
-                  type
-                  hide
+      graphql(
+        `
+          {
+            allMarkdownRemark(
+              limit: 1000
+              sort: { fields: [frontmatter___date], order: DESC }
+            ) {
+              totalCount
+              edges {
+                node {
+                  frontmatter {
+                    title
+                    tags
+                    cover
+                    date
+                    category
+                    author
+                  }
+                  fields {
+                    slug
+                  }
+                  excerpt
+                  timeToRead
                 }
               }
             }
           }
-        }
-      `).then((result) => {
+        `
+      ).then(result => {
         if (result.errors) {
+          /* eslint no-console: "off" */
           console.log(result.errors);
           reject(result.errors);
         }
 
-        const edges = get('data.allMarkdownRemark.edges')(result);
-        const tagMatrix = [];
-        const categoryMatrix = [];
+        // Creates Index page
+        createPaginationPages({
+          createPage,
+          edges: result.data.allMarkdownRemark.edges,
+          component: indexPage,
+          limit: siteConfig.sitePaginationLimit
+        });
 
-        // Create blog posts pages.
-        each((edge) => {
-          const frontmatter = get('node.frontmatter')(edge);
-          const { tags, category, type, hide } = frontmatter;
-
-          if (hide !== true) {
-            if (isArray(tags)) {
-              tagMatrix.push(tags);
+        // Creates Posts
+        createLinkedPages({
+          createPage,
+          edges: result.data.allMarkdownRemark.edges,
+          component: postPage,
+          edgeParser: edge => ({
+            path: edge.node.fields.slug,
+            context: {
+              slug: edge.node.fields.slug
             }
+          }),
+          circular: true
+        });
 
-            if (isString(category)) {
-              categoryMatrix.push(category);
-            }
+        const tagSet = new Set();
+        const tagMap = new Map();
+        const categorySet = new Set();
+        const authorSet = new Set();
+        authorSet.add(siteConfig.blogAuthorId);
 
-            let component = null;
-            switch (type) {
-              case PORTFOLIO:
-                component = portfolio;
-                break;
-              case RESUME:
-                component = resume;
-                break;
-              case POST:
-              default:
-                component = post;
-                break;
-            }
+        result.data.allMarkdownRemark.edges.forEach(edge => {
+          if (edge.node.frontmatter.tags) {
+            edge.node.frontmatter.tags.forEach(tag => {
+              tagSet.add(tag);
 
-            if (!isNull(component)) {
-              createPage({
-                path: edge.node.frontmatter.path,
-                component,
-                context: {
-                },
-              });
-            }
+              const array = tagMap.has(tag) ? tagMap.get(tag) : [];
+              array.push(edge);
+              tagMap.set(tag, array);
+            });
           }
-        })(edges);
 
-        const portfoliosCount = flow(
-          filter((edge) => {
-            const frontmatter = get('node.frontmatter')(edge);
-            const { type } = frontmatter;
+          if (edge.node.frontmatter.category) {
+            categorySet.add(edge.node.frontmatter.category);
+          }
 
-            return type === PORTFOLIO;
-          }),
-          size
-        )(edges);
+          if (edge.node.frontmatter.author) {
+            authorSet.add(edge.node.frontmatter.author);
+          }
+        });
 
-        if (portfoliosCount) {
-          createPage({
-            path: '/portfolios',
-            component: portfolios,
+        const tagFormatter = tag => route =>
+          `/tags/${_.kebabCase(tag)}/${route !== 1 ? route : ''}`;
+        const tagList = Array.from(tagSet);
+        tagList.forEach(tag => {
+          // Creates tag pages
+          createPaginationPages({
+            createPage,
+            edges: tagMap.get(tag),
+            component: tagPage,
+            pathFormatter: tagFormatter(tag),
+            limit: siteConfig.sitePaginationLimit,
             context: {
-            },
+              tag
+            }
           });
-        }
+        });
 
-        const postsCount = flow(
-          filter((edge) => {
-            const frontmatter = get('node.frontmatter')(edge);
-            const { hide, type } = frontmatter;
-
-            return !hide && (type || POST) === POST;
-          }),
-          size
-        )(edges);
-        const pagesCount = postsCount ? (Math.ceil(postsCount / CONTENT_PER_PAGE) + 1) : 1;
-        const pages = range(1, pagesCount);
-
-        if (size(pages)) {
-          each((page) => {
-            createPage({
-              path: `/pages/${page}`,
-              component: list,
-              context: {
-              },
-            });
-          })(pages);
-        } else {
+        const categoryList = Array.from(categorySet);
+        categoryList.forEach(category => {
           createPage({
-            path: `/pages/1`,
-            component: list,
+            path: `/categories/${_.kebabCase(category)}/`,
+            component: categoryPage,
             context: {
-            },
+              category
+            }
           });
-        }
+        });
 
-        const tags = flow(
-          flatten,
-          uniq
-        )(tagMatrix);
-
-        each((tag) => {
-          const taggedPostCount = reduce((count, edge) => {
-            const postTags = get('node.frontmatter.tags')(edge);
-
-            if (includes(tag)(postTags)) {
-              return count + 1;
+        const authorList = Array.from(authorSet);
+        authorList.forEach(author => {
+          createPage({
+            path: `/author/${_.kebabCase(author)}/`,
+            component: authorPage,
+            context: {
+              author
             }
-
-            return count;
-          }, 0)(edges);
-          const taggedListCount = taggedPostCount ?
-            (Math.ceil(taggedPostCount / CONTENT_PER_PAGE) + 1) : 1;
-          const taggedListPages = range(1, taggedListCount);
-
-          each((taggedListPage) => {
-            createPage({
-              path: `/tags/${tag}/${taggedListPage}`,
-              component: taggedList,
-              context: {
-              },
-            });
-          })(taggedListPages);
-        })(tags);
-
-        const categories = flow(
-          flatten,
-          uniq
-        )(categoryMatrix);
-
-        each((category) => {
-          const categorizedPostCount = reduce((count, edge) => {
-            const postCategory = get('node.frontmatter.category')(edge);
-
-            if (includes(category)(postCategory)) {
-              return count + 1;
-            }
-
-            return count;
-          }, 0)(edges);
-          const categorizedListCount = categorizedPostCount ?
-            (Math.ceil(categorizedPostCount / CONTENT_PER_PAGE) + 1) : 1;
-          const categorizedListPages = range(1, categorizedListCount);
-
-          each((categorizedListPage) => {
-            createPage({
-              path: `/categories/${category}/${categorizedListPage}`,
-              component: categorizedList,
-              context: {
-              },
-            });
-          })(categorizedListPages);
-        })(categories);
+          });
+        });
       })
     );
   });
 };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    });
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  if (stage === 'build-javascript') {
+    config.plugin('Lodash', webpackLodashPlugin, null);
   }
 };

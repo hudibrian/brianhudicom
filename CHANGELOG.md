@@ -1,75 +1,88 @@
-# Changelog
+# Change Log
 
-## 0.1.0-alpha - 2018-03-29
-- initial commit
-- features
-  - Post
-    - Pagination
-    - Categories
-    - Tags
-    - Search
-    - Put React Application into post
-    - Put Tweet into post
-    - Draft (set `hide` to `true`)
-  - Portfolio
-  - Resume
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## 0.1.1-alpha - 2018-04-03
-- support mobile version
+<a name="1.0.7"></a>
+## [1.0.7](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.6...v1.0.7) (2018-05-01)
 
-## 0.1.2-alpha - 2018-04-03
-- update `READEME.md`
-- customize `404` page
-- add `min-height` to contents wrapper
 
-## 0.1.3 - 2018-04-04
-- add image to post
-- add copy button in post
-- add `border-radius` to profile image
-- fix card UI (tags are overflowed)
-- improve post readablity
-- move logics for rendering tweets & components into `redux-saga`
+### Bug Fixes
 
-## 0.1.4 - 2018-04-05
-- fix ui bug in production mode
+* adding yarn.lock to fix install issues ([f043bbc](https://github.com/haysclark/gatsby-starter-casper/commit/f043bbc)), closes [#21](https://github.com/haysclark/gatsby-starter-casper/issues/21)
 
-## 0.1.5 - 2018-04-06
-- remove `height: 100vh;`
 
-## 0.1.6 - 2018-04-14
-- fix lint
-- add husky for hooking commit
 
-## 0.1.7 - 2018-04-22
-- fix bug (related with `styled-components`)
-- change logics for adding image into post
-- add `react-helmet` into some pages
-- change some styles
-  - add font(`Inconsolata`) for `<code>`'s `font-family`
+<a name="1.0.6"></a>
+## [1.0.6](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.5...v1.0.6) (2018-04-25)
 
-## 0.1.9 - 2018-04-22
-- fix bug (post's html)
-- remove console
-- change eslint rules
 
-## 0.2.0 - 2018-07-08
-- migrate `gatsby` into `v2 beta` (from `v2 alpha`)
-  - add `gatsby` with specific `version` into `peerDependencies`
-- use `css` instead of `less`
-- update `dependencides`
-  - `babel`, `redux`, `react` etcetera
+### Bug Fixes
 
-## 0.2.0-1 - 2018-07-22
-- add `LICENCE.md`
+* fixing MainNav rendering ([d245dc1](https://github.com/haysclark/gatsby-starter-casper/commit/d245dc1)), closes [#18](https://github.com/haysclark/gatsby-starter-casper/issues/18)
+* improving npm ‘clean’ script to wipe .cache ([a02fd73](https://github.com/haysclark/gatsby-starter-casper/commit/a02fd73))
 
-## 0.2.1 - 2018-08-10
-- update `gatsby` to use `Link` in `gatsby` instead of `gatsby-link` ((ISSUE 8)[https://github.com/wonism/gatsby-advanced-blog/issues/8])
-- remove all `css`s and add styles into `Styled Components`. ((ISSUE 9)[https://github.com/wonism/gatsby-advanced-blog/issues/9])
-- fix SSR ((ISSUE 9)[https://github.com/wonism/gatsby-advanced-blog/issues/9])
-- update `.eslintrc` to change some rules
 
-## 0.2.2 - 2018-08-24
-- fix issue that is related with media query for print ((ISSUE 11)[https://github.com/wonism/gatsby-advanced-blog/issues/11])
 
-## 0.2.3 - 2018-09-26
-- update `gatsby` version (`v2.0.8`)
+<a name="1.0.5"></a>
+## [1.0.5](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.4...v1.0.5) (2018-03-07)
+
+
+### Bug Fixes
+
+* adding basic validation for authors ([ff26e67](https://github.com/haysclark/gatsby-starter-casper/commit/ff26e67)), closes [#10](https://github.com/haysclark/gatsby-starter-casper/issues/10)
+* fixing sample-post dates and folder names ([2c46366](https://github.com/haysclark/gatsby-starter-casper/commit/2c46366))
+
+
+### Performance Improvements
+
+* removing dead GraphQL query ([b9d4133](https://github.com/haysclark/gatsby-starter-casper/commit/b9d4133))
+
+
+
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.3...v1.0.4) (2018-03-07)
+
+
+### Bug Fixes
+
+* re-adding Disqus support ([9e7a701](https://github.com/haysclark/gatsby-starter-casper/commit/9e7a701)), closes [#9](https://github.com/haysclark/gatsby-starter-casper/issues/9)
+
+
+
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.2...v1.0.3) (2018-01-10)
+
+
+### Bug Fixes
+
+* maximizing image width to 710px ([aca1a8f](https://github.com/haysclark/gatsby-starter-casper/commit/aca1a8f))
+* removing blog post image style conflict ([2e41fbe](https://github.com/haysclark/gatsby-starter-casper/commit/2e41fbe))
+
+
+
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.1...v1.0.2) (2018-01-09)
+
+
+### Bug Fixes
+
+* Social Media Icons now scale at lower res ([d089fe7](https://github.com/haysclark/gatsby-starter-casper/commit/d089fe7))
+
+
+
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.0...v1.0.1) (2018-01-06)
+
+
+### Bug Fixes
+
+* ‘lint:js’ linting ‘public’ folder ([fc4b857](https://github.com/haysclark/gatsby-starter-casper/commit/fc4b857))
+* ‘lint:md’ error due to no folder ([f689337](https://github.com/haysclark/gatsby-starter-casper/commit/f689337))
+* removing all inherited CSS lint ([0f41b20](https://github.com/haysclark/gatsby-starter-casper/commit/0f41b20))
+
+
+
+<a name="1.0.0"></a>
+# 1.0.0 (2018-01-05)
+
+Initial release, see project [README](https://github.com/haysclark/gatsby-starter-casper) for a list of all the features.
