@@ -1,9 +1,42 @@
-# Project dependencies
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-node_modules
+# OS X
+.DS_Store*
+Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+*~
+
+# npm
+node_modules/
+*.log
+*.gz
+build/
+
+# configure
+config/
+.env.development
+.env.production
+
+# log
+dump.rdb
+nohup.out
+
+# dotenv
+.env
+
+# virtualenv
+.venv/
+venv/
+ENV/
+
+# cached files
 .cache/
-# Build directory
+
+# generated files
 public/
-static/admin/*.bundle.*
-.DS_Store
-yarn-error.log
