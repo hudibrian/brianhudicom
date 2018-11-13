@@ -1,7 +1,7 @@
-import React, { Component, createElement, isValidElement } from "react";
-import GetNavList from "./GetNavList";
-import "./Navigation.css";
-import SubscribeButton from "../SubscribeButton/SubscribeButton";
+import React, { Component, createElement, isValidElement } from 'react';
+import GetNavList from './GetNavList';
+import './Navigation.css';
+import SubscribeButton from '../SubscribeButton/SubscribeButton';
 
 const Divider = () => null;
 
@@ -20,9 +20,9 @@ const ListItem = props => {
 };
 
 const mapToListParts = (item, index) => {
-  if (typeof item === "string" || typeof item === "number") {
+  if (typeof item === 'string' || typeof item === 'number') {
     return createElement(ListItem, { key: item, primaryText: item });
-  } else if (isValidElement(item)) {
+  } if (isValidElement(item)) {
     return item;
   }
 
@@ -56,7 +56,7 @@ class Navigation extends Component {
             <span className="hidden">Close</span>
           </a>
           <ul>{navItems.map(mapToListParts)}</ul>
-          <SubscribeButton url={config.siteRss} />
+          {/* <SubscribeButton url={config.siteRss} /> */}
         </div>
         <span className="nav-cover" />
       </div>
