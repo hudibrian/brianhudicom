@@ -1,11 +1,10 @@
 {
   "uid": "hudi",
   "name": "Brian Hudi",
-  "image":
-    "https://res.cloudinary.com/bshrp/image/upload/v1542003607/22593782.jpg",
+  "image": "https://res.cloudinary.com/bshrp/image/upload/v1542003607/22593782.jpg",
   "url": "https://twitter.com/brianhudi",
   "location": "Chicago",
-  "bio": "asfadf",
+  "bio": "Brian is a developer for Rightpoint in Chicago.  He is passionate about all things web development, and likes to explore the nooks and crannies of JavaScript.",
   "socialUrls": [
     "https://github.com/hudibrian",
     "https://twitter.com/brianhudi",
