@@ -34,7 +34,7 @@ function GetNavList(config) {
   });
 
   NavList.push({
-    primaryText: 'Contact Me',
+    primaryText: 'Contact',
     component: Link,
     to: '/contact/'
   });
