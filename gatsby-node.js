@@ -39,7 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const indexPage = path.resolve('src/templates/index.jsx');
-    // const postPage = path.resolve('src/templates/post.jsx');
+    const postPage = path.resolve('src/templates/post.jsx');
     const tagPage = path.resolve('src/templates/tag.jsx');
     const categoryPage = path.resolve('src/templates/category.jsx');
     const authorPage = path.resolve('src/templates/author.jsx');
@@ -99,18 +99,18 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         // Creates Posts
-        // createLinkedPages({
-        //   createPage,
-        //   edges: result.data.allMarkdownRemark.edges,
-        //   component: postPage,
-        //   edgeParser: edge => ({
-        //     path: edge.node.fields.slug,
-        //     context: {
-        //       slug: edge.node.fields.slug
-        //     }
-        //   }),
-        //   circular: true
-        // });
+        createLinkedPages({
+          createPage,
+          edges: result.data.allMarkdownRemark.edges,
+          component: postPage,
+          edgeParser: edge => ({
+            path: edge.node.fields.slug,
+            context: {
+              slug: edge.node.fields.slug
+            }
+          }),
+          circular: true
+        });
 
         const tagSet = new Set();
         const tagMap = new Map();
