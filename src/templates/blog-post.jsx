@@ -44,7 +44,7 @@ const formatReadNext = value => ({
   excerpt: value.excerpt
 });
 
-class PostTemplate extends React.Component {
+class BlogPostTemplate extends React.Component {
   state = {
     menuOpen: false
   };
@@ -207,4 +207,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default PostTemplate;
+export default BlogPostTemplate;
