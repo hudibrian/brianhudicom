@@ -1,9 +1,9 @@
 /** empty css file for component consistency **/
-.about {
+.contact {
   display: grid;
 }
 
-.about-content {
+.contact-content {
   margin: auto 33.33% auto 33.33%;
 }
 

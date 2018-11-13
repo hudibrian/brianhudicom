@@ -1,13 +1,20 @@
-import React, { Component } from "react";
-import "./About.css";
+import React, { Component } from 'react';
+import './About.css';
 
 class About extends Component {
   render() {
     return (
       <div className="about">
-        <h1>
-          Edit About component or pages/about.jsx to include your information.
-        </h1>
+        <section className="about-content">
+          <h2 className="about-content text-center">About</h2>
+          My name is Brian Hudi, and I am a software developer for Rightpoint. I
+          also do freelance web development on projects that I find interesting
+          or challenging.
+          <br />
+          <br />
+          Please <a href="/contact">contact me</a> if you are interested in
+          working on a project together, or if you have any questions
+        </section>
       </div>
     );
   }

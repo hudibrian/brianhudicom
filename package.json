@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-casper",
-  "description": "GatsbyJS starter that themed with the Casper theme from Ghost.",
+  "name": "brianhudi.com",
+  "description": "brian hudi's blog",
   "version": "1.0.7",
-  "author": "Hays Clark <hays.clark@gmail.com>",
+  "author": "Brian Hudi <bshudi@gmail.com>",
   "dependencies": {
     "babel-eslint": "^10.0.1",
     "classnames": "^2.2.6",
@@ -58,14 +58,7 @@
     "stylelint-config-standard": "^18.2.0",
     "write-good": "^0.13.1"
   },
-  "keywords": [
-    "gatsby",
-    "blog",
-    "casper",
-    "starter"
-  ],
   "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",
     "serve": "gatsby serve",

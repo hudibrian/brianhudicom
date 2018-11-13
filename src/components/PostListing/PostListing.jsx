@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "gatsby";
-import AuthorThumbnail from "../AuthorThumbnail/AuthorThumbnail";
-import PostTags from "../PostTags/PostTags";
-import SiteConfig from "../../../data/SiteConfig";
-import AuthorLink from "../AuthorLink/AuthorLink";
-import PostFormatting from "../../components/PostFormatting/PostFormatting";
-import PostHeader from "../../components/PostHeader/PostHeader";
-import PostDate from "../PostDate/PostDate";
-import AuthorModel from "../../models/author-model";
-import "./PostListing.css";
+import React from 'react';
+import { Link } from 'gatsby';
+import AuthorThumbnail from '../AuthorThumbnail/AuthorThumbnail';
+import PostTags from '../PostTags/PostTags';
+import SiteConfig from '../../../data/SiteConfig';
+import AuthorLink from '../AuthorLink/AuthorLink';
+import PostFormatting from '../../components/PostFormatting/PostFormatting';
+import PostHeader from '../../components/PostHeader/PostHeader';
+import PostDate from '../PostDate/PostDate';
+import AuthorModel from '../../models/author-model';
+import './PostListing.css';
 
 const getPostList = (postEdges, authorEdges) =>
   postEdges.map(postEdge => ({
@@ -35,7 +35,7 @@ class PostListing extends React.Component {
         {/* This is the post loop - each post will be output using this markup */}
         {postList.map(post => {
           const { title, path, excerpt, author, tags, date } = post;
-          const className = post.post_class ? post.post_class : "post";
+          const className = post.post_class ? post.post_class : 'post';
 
           return (
             <PostFormatting className={className} key={title}>
@@ -47,7 +47,7 @@ class PostListing extends React.Component {
               <section className="post-excerpt">
                 {/* TODO limit excerpt to 26 words */}
                 <p>
-                  {excerpt}{" "}
+                  {excerpt}{' '}
                   <Link className="read-more" to={path}>
                     &raquo;
                   </Link>

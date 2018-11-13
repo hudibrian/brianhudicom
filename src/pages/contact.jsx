@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import About from '../components/About/About';
+import Contact from '../components/Contact/Contact';
 import config from '../../data/SiteConfig';
 import SiteWrapper from '../components/SiteWrapper/SiteWrapper';
 import Layout from '../components/layout';
@@ -16,7 +16,7 @@ import PostFormatting from '../components/PostFormatting/PostFormatting';
 
 import './pages.css';
 
-class AboutPage extends Component {
+class ContactPage extends Component {
   state = {
     menuOpen: false
   };
@@ -50,9 +50,9 @@ class AboutPage extends Component {
       <Layout location={location}>
         <Drawer isOpen={this.state.menuOpen}>
           <Navigation config={config} onClose={this.handleOnClose} />
-          <Helmet title={`About | ${config.siteTitle}`} />
+          <Helmet title={`Contact Me | ${config.siteTitle}`} />
 
-          <div className="about">
+          <div className="contact">
             <SiteWrapper>
               <MainHeader className="post-head" cover="">
                 <MainNav>
@@ -65,7 +65,7 @@ class AboutPage extends Component {
               </MainHeader>
               <MainContent>
                 <PostFormatting>
-                  <About />
+                  <Contact />
                 </PostFormatting>
               </MainContent>
               <Footer
@@ -80,4 +80,4 @@ class AboutPage extends Component {
   }
 }
 
-export default AboutPage;
+export default ContactPage;
