@@ -24,7 +24,7 @@ import PostTags from '../components/PostTags/PostTags';
 import Footer from '../components/Footer/Footer';
 import AuthorModel from '../models/author-model';
 import Disqus from '../components/Disqus/Disqus';
-import Layout from '../components/layout';
+import MainLayout from '../components/layout';
 
 function parsePost(post, slug) {
   const result = post;
@@ -87,7 +87,7 @@ class PostTemplate extends React.Component {
     const getPrevData = () => (prev ? formatReadNext(data.prev) : null);
 
     return (
-      <Layout location={this.props.location}>
+      <MainLayout location={this.props.location}>
         <Drawer className="post-template" isOpen={this.state.menuOpen}>
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
@@ -147,7 +147,7 @@ class PostTemplate extends React.Component {
             />
           </SiteWrapper>
         </Drawer>
-      </Layout>
+      </MainLayout>
     );
   }
 }

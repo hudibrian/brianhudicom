@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import Contact from '../components/Contact/Contact';
 import config from '../../data/SiteConfig';
 import SiteWrapper from '../components/SiteWrapper/SiteWrapper';
-import Layout from '../components/layout';
+import MainLayout from '../components/layout';
 import Drawer from '../components/Drawer/Drawer';
 import Navigation from '../components/Navigation/Navigation';
 import MainNav from '../components/MainNav/MainNav';
@@ -47,7 +47,7 @@ class ContactPage extends Component {
     const { location } = this.props;
 
     return (
-      <Layout location={location}>
+      <MainLayout location={location}>
         <Drawer isOpen={this.state.menuOpen}>
           <Navigation config={config} onClose={this.handleOnClose} />
           <Helmet title={`Contact Me | ${config.siteTitle}`} />
@@ -75,7 +75,7 @@ class ContactPage extends Component {
             </SiteWrapper>
           </div>
         </Drawer>
-      </Layout>
+      </MainLayout>
     );
   }
 }

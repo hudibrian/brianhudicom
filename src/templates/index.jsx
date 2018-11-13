@@ -17,7 +17,7 @@ import PageTitle from '../components/PageTitle/PageTitle';
 import PageDescription from '../components/PageDescription/PageDescription';
 import PaginatedContent from '../components/PaginatedContent/PaginatedContent';
 import SocialMediaIcons from '../components/SocialMediaIcons/SocialMediaIcons';
-import Layout from '../components/layout';
+import MainLayout from '../components/layout';
 
 class IndexTemplate extends React.Component {
   state = {
@@ -59,7 +59,7 @@ class IndexTemplate extends React.Component {
     const authorsEdges = this.props.data.authors.edges;
 
     return (
-      <Layout location={this.props.location}>
+      <MainLayout location={this.props.location}>
         <Drawer className="home-template" isOpen={this.state.menuOpen}>
           <Helmet title={config.siteTitle} />
           <SEO postEdges={nodes} />
@@ -98,7 +98,8 @@ class IndexTemplate extends React.Component {
                   data-offset="-45"
                   spy
                   smooth
-                  duration={500}>
+                  duration={500}
+                >
                   <span className="hidden">Scroll Down</span>
                 </Link>
               </MainHeader>
@@ -109,7 +110,8 @@ class IndexTemplate extends React.Component {
                 total={total}
                 limit={limit}
                 prev={prev}
-                next={next}>
+                next={next}
+              >
                 {/* PostListing component renders all the posts */}
                 <PostListing postEdges={nodes} postAuthors={authorsEdges} />
               </PaginatedContent>
@@ -122,7 +124,7 @@ class IndexTemplate extends React.Component {
             />
           </SiteWrapper>
         </Drawer>
-      </Layout>
+      </MainLayout>
     );
   }
 }

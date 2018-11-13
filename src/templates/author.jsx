@@ -20,7 +20,7 @@ import AuthorWebsite from '../components/AuthorWebsite/AuthorWebsite';
 import AuthorStats from '../components/AuthorStats/AuthorStats';
 import Footer from '../components/Footer/Footer';
 import SocialMediaIcons from '../components/SocialMediaIcons/SocialMediaIcons';
-import Layout from '../components/layout';
+import MainLayout from '../components/layout';
 
 class AuthorTemplate extends React.Component {
   state = {
@@ -63,7 +63,7 @@ class AuthorTemplate extends React.Component {
     const getAuthor = () => authorsEdges[0].node;
 
     return (
-      <Layout location={this.props.location}>
+      <MainLayout location={this.props.location}>
         <Drawer className="author-template" isOpen={this.state.menuOpen}>
           <Helmet title={`Posts by "${author}" | ${config.siteTitle}`} />
 
@@ -105,7 +105,7 @@ class AuthorTemplate extends React.Component {
             />
           </SiteWrapper>
         </Drawer>
-      </Layout>
+      </MainLayout>
     );
   }
 }
