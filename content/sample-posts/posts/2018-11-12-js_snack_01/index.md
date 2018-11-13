@@ -1,8 +1,7 @@
 ---
-title: 'JavaScript Snack #01: Arrow Functions'
+title: 'JavaScript Snack #1: Arrow Functions'
 category: 'JavaScript Snacks'
 date: '2018-11-12'
-slug: 'js-snack-01'
 author: 'hudi'
 cover: ''
 tags:

@@ -139,7 +139,7 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         const tagFormatter = tag => route =>
-          `tags/${_.kebabCase(tag)}/${route !== 1 ? route : ''}`;
+          `/tags/${_.kebabCase(tag)}/${route !== 1 ? route : ''}`;
         const tagList = Array.from(tagSet);
         tagList.forEach(tag => {
           // Creates tag pages
@@ -158,7 +158,7 @@ exports.createPages = ({ graphql, actions }) => {
         const categoryList = Array.from(categorySet);
         categoryList.forEach(category => {
           createPage({
-            path: `categories/${_.kebabCase(category)}/`,
+            path: `/categories/${_.kebabCase(category)}/`,
             component: categoryPage,
             context: {
               category
@@ -169,7 +169,7 @@ exports.createPages = ({ graphql, actions }) => {
         const authorList = Array.from(authorSet);
         authorList.forEach(author => {
           createPage({
-            path: `author/${_.kebabCase(author)}/`,
+            path: `/author/${_.kebabCase(author)}/`,
             component: authorPage,
             context: {
               author
