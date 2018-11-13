@@ -1,49 +1,48 @@
-const path = require('path');
-const _ = require('lodash');
-const fs = require('fs');
-const webpackLodashPlugin = require('lodash-webpack-plugin');
-const siteConfig = require('./data/SiteConfig');
+const path = require("path");
+const _ = require("lodash");
+const fs = require("fs");
+const siteConfig = require("./data/SiteConfig");
 const {
   createPaginationPages,
   createLinkedPages
-} = require('gatsby-pagination');
+} = require("gatsby-pagination");
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
   let slug;
-  if (node.internal.type === 'MarkdownRemark') {
+  if (node.internal.type === "MarkdownRemark") {
     const fileNode = getNode(node.parent);
     const parsedFilePath = path.parse(fileNode.relativePath);
     if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
+      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, "slug")
     ) {
       slug = `/${_.kebabCase(node.frontmatter.slug)}`;
     } else if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
+      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
     ) {
       slug = `/${_.kebabCase(node.frontmatter.title)}`;
-    } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
+    } else if (parsedFilePath.name !== "index" && parsedFilePath.dir !== "") {
       slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
-    } else if (parsedFilePath.dir === '') {
+    } else if (parsedFilePath.dir === "") {
       slug = `/${parsedFilePath.name}/`;
     } else {
       slug = `/${parsedFilePath.dir}/`;
     }
-    createNodeField({ node, name: 'slug', value: slug });
+    createNodeField({ node, name: "slug", value: slug });
   }
 };
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const indexPage = path.resolve('src/templates/index.jsx');
-    const postPage = path.resolve('src/templates/post.jsx');
-    const tagPage = path.resolve('src/templates/tag.jsx');
-    const categoryPage = path.resolve('src/templates/category.jsx');
-    const authorPage = path.resolve('src/templates/author.jsx');
+    const indexPage = path.resolve("src/templates/index.jsx");
+    const postPage = path.resolve("src/templates/post.jsx");
+    const tagPage = path.resolve("src/templates/tag.jsx");
+    const categoryPage = path.resolve("src/templates/category.jsx");
+    const authorPage = path.resolve("src/templates/author.jsx");
 
     if (
       !fs.existsSync(
@@ -140,7 +139,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         });
 
         const tagFormatter = tag => route =>
-          `/tags/${_.kebabCase(tag)}/${route !== 1 ? route : ''}`;
+          `/tags/${_.kebabCase(tag)}/${route !== 1 ? route : ""}`;
         const tagList = Array.from(tagSet);
         tagList.forEach(tag => {
           // Creates tag pages
@@ -180,10 +179,4 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       })
     );
   });
-};
-
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === 'build-javascript') {
-    config.plugin('Lodash', webpackLodashPlugin, null);
-  }
 };
