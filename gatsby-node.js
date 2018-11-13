@@ -102,9 +102,9 @@ exports.createPages = ({ graphql, actions }) => {
         createLinkedPages({
           createPage,
           edges: result.data.allMarkdownRemark.edges,
-          component: path.resolve('src/templates/post.jsx'),
+          component: postPage,
           edgeParser: edge => ({
-            path: edge.node.fields.slug,
+            path: '/something',
             context: {
               slug: edge.node.fields.slug
             }
