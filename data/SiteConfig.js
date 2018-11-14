@@ -3,7 +3,7 @@ module.exports = {
   blogAuthorDir: 'sample-authors', // The name of directory that contains your 'authors' folder.
   blogAuthorId: 'hudi', // The default and fallback author ID used for blog posts without a defined author.
   siteTitle: 'Hello, I am Brian Hudi', // Site title.
-  siteTitleAlt: 'Brian Hudi Blog', // Alternative site title for SEO.
+  siteTitleAlt: 'B.Hudi Blog', // Alternative site title for SEO.
   siteLogo:
     'https://res.cloudinary.com/bshrp/image/upload/v1542003248/method-draw-image_19.svg', // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
   siteLogoLight:
@@ -19,7 +19,7 @@ module.exports = {
   // siteFBAppID: "1825356251115265", // optional, sets the FB Application ID for using app insights
   sitePaginationLimit: 10, // The max number of posts per page.
   googleAnalyticsID: 'UA-124376316-1', // GA tracking ID.
-  // disqusShortname: "https-vagr9k-github-io-gatsby-advanced-starter", // enables Disqus comments, visually deviates from original Casper theme.
+  disqusShortname: 'brianhudicom', // enables Disqus comments, visually deviates from original Casper theme.
   siteSocialUrls: [
     'https://github.com/hudibrian',
     'https://twitter.com/brianhudi',

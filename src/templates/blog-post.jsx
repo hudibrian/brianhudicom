@@ -100,7 +100,7 @@ class BlogPostTemplate extends React.Component {
           <SiteWrapper>
             <MainHeader className="post-head" cover={cover}>
               <MainNav>
-                <BlogLogo logo={config.siteLogo} title={config.siteTitle} />
+                <BlogLogo logo={cover ? config.siteLogoLight : config.siteLogo} title={config.siteTitle} />
                 <MenuButton
                   navigation={config.siteNavigation}
                   onClick={this.handleOnClick}
