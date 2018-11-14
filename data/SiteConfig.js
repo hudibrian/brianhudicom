@@ -9,6 +9,7 @@ module.exports = {
   siteLogoLight:
     'https://res.cloudinary.com/bshrp/image/upload/v1542003105/method-draw-image_17.svg', // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
   siteUrl: 'https://brianhudi.com', // Domain of your website without pathPrefix.
+  pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
   siteDescription: "Let's build a better web together.", // Website description used for RSS feeds/meta description tag.
   siteCover:
     'https://res.cloudinary.com/bshrp/image/upload/v1542003026/steve-harvey-523112-unsplash.jpg', // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
