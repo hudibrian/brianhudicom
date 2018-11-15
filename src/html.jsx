@@ -1,8 +1,8 @@
 /* eslint import/no-unresolved:"off" */
 /* eslint import/extensions:"off" */
 /* eslint global-require:"off" */
-import React from "react";
-import favicon from "./favicon.png";
+import React from 'react';
+import favicon from './favicon.png';
 
 export default class HTML extends React.Component {
   render() {
@@ -20,6 +20,10 @@ export default class HTML extends React.Component {
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
+          />
+          <meta
+            property="og:image"
+            content="https://res.cloudinary.com/bshrp/image/upload/v1542240782/method-draw-image_22.svg"
           />
 
           {/* Styles'n'Scripts */}
