@@ -53,11 +53,11 @@ class PostShare extends React.Component {
           {/* <span className="hidden">Pinterest</span> */}
           {/* </a> */}
           {/* </PinterestShareButton> */}
-          <GooglePlusShareButton url={url}>
+          {/* <GooglePlusShareButton url={url}>
             <a className="icon-google-plus" style={{ fontSize: '1.4em' }}>
               <span className="hidden">Google+</span>
             </a>
-          </GooglePlusShareButton>
+          </GooglePlusShareButton> */}
         </div>
       </section>
     );
