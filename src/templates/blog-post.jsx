@@ -91,6 +91,13 @@ class BlogPostTemplate extends React.Component {
         <Drawer className="post-template" isOpen={this.state.menuOpen}>
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
+            <meta property="og:site_name" content="BH Blog" />
+            <meta property="og:title" content="Brian Hudi's Blog" />
+            <meta
+              property="og:image"
+              content="https://res.cloudinary.com/bshrp/image/upload/c_scale,e_art:refresh,h_200,r_0,w_300/a_0/v1542240782/method-draw-image_22.png"
+            />
+            <meta property="og:type" content="blog" />
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
 
