@@ -88,6 +88,15 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <MainLayout location={this.props.location}>
+        <head>
+          <meta property="og:site_name" content="BH Blog" />
+          <meta property="og:title" content="Brian Hudi's Blog" />
+          <meta
+            property="og:image"
+            content="https://res.cloudinary.com/bshrp/image/upload/c_scale,e_art:refresh,h_200,r_0,w_300/a_0/v1542240782/method-draw-image_22.png"
+          />
+          <meta property="og:type" content="blog" />
+        </head>
         <Drawer className="post-template" isOpen={this.state.menuOpen}>
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
@@ -100,7 +109,10 @@ class BlogPostTemplate extends React.Component {
           <SiteWrapper>
             <MainHeader className="post-head" cover={cover}>
               <MainNav>
-                <BlogLogo logo={cover ? config.siteLogoLight : config.siteLogo} title={config.siteTitle} />
+                <BlogLogo
+                  logo={cover ? config.siteLogoLight : config.siteLogo}
+                  title={config.siteTitle}
+                />
                 <MenuButton
                   navigation={config.siteNavigation}
                   onClick={this.handleOnClick}
