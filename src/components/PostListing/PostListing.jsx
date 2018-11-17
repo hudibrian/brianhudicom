@@ -28,7 +28,8 @@ const getPostList = (postEdges, authorEdges) =>
 
 class PostListing extends React.Component {
   render() {
-    const postList = getPostList(this.props.postEdges, this.props.postAuthors);
+    const { postEdges, postAuthors } = this.props;
+    const postList = getPostList(postEdges, postAuthors);
 
     return (
       <div>
@@ -47,7 +48,8 @@ class PostListing extends React.Component {
               <section className="post-excerpt">
                 {/* TODO limit excerpt to 26 words */}
                 <p>
-                  {excerpt}{' '}
+                  {excerpt}
+                  {' '}
                   <Link className="read-more" to={path}>
                     &raquo;
                   </Link>

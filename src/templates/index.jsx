@@ -25,8 +25,10 @@ class IndexTemplate extends React.Component {
   };
 
   handleOnClick = evt => {
+    const { menuOpen } = this.state;
+
     evt.stopPropagation();
-    if (this.state.menuOpen) {
+    if (menuOpen) {
       this.closeMenu();
     } else {
       this.openMenu();
@@ -47,20 +49,14 @@ class IndexTemplate extends React.Component {
   };
 
   render() {
-    const {
-      nodes,
-      page,
-      pages,
-      total,
-      limit,
-      prev,
-      next
-    } = this.props.pageContext;
-    const authorsEdges = this.props.data.authors.edges;
+    const { pageContext, data, location } = this.props;
+    const { menuOpen } = this.state;
+    const { nodes, page, pages, total, limit, prev, next } = pageContext;
+    const authorsEdges = data.authors.edges;
 
     return (
-      <MainLayout location={this.props.location}>
-        <Drawer className="home-template" isOpen={this.state.menuOpen}>
+      <MainLayout location={location}>
+        <Drawer className="home-template" isOpen={menuOpen}>
           <Helmet title={config.siteTitle} />
           <SEO postEdges={nodes} />
 
@@ -129,11 +125,8 @@ class IndexTemplate extends React.Component {
   }
 }
 
-/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
-    # posts data comes from the context
-    # authors
     authors: allAuthorsJson {
       edges {
         node {
