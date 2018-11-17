@@ -25,7 +25,6 @@ import Footer from '../components/Footer/Footer';
 import AuthorModel from '../models/author-model';
 import Disqus from '../components/Disqus/Disqus';
 import MainLayout from '../components/layout';
-import ogimage from '../../static/images/ogimage.png';
 
 function parsePost(post, slug) {
   const result = post;
@@ -89,9 +88,6 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <MainLayout location={this.props.location}>
-        <head>
-          <meta property="og:image" content={ogimage} />
-        </head>
         <Drawer className="post-template" isOpen={this.state.menuOpen}>
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
@@ -104,10 +100,7 @@ class BlogPostTemplate extends React.Component {
           <SiteWrapper>
             <MainHeader className="post-head" cover={cover}>
               <MainNav>
-                <BlogLogo
-                  logo={cover ? config.siteLogoLight : config.siteLogo}
-                  title={config.siteTitle}
-                />
+                <BlogLogo logo={cover ? config.siteLogoLight : config.siteLogo} title={config.siteTitle} />
                 <MenuButton
                   navigation={config.siteNavigation}
                   onClick={this.handleOnClick}

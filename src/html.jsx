@@ -3,7 +3,6 @@
 /* eslint global-require:"off" */
 import React from 'react';
 import favicon from './favicon.png';
-import ogimage from '../static/images/ogimage.png';
 
 export default class HTML extends React.Component {
   render() {
@@ -24,7 +23,10 @@ export default class HTML extends React.Component {
           />
           <meta property="og:site_name" content="BH Blog" />
           <meta property="og:title" content="Brian Hudi's Blog" />
-          <meta property="og:image" content={ogimage} />
+          <meta
+            property="og:image"
+            content="https://res.cloudinary.com/bshrp/image/upload/c_scale,e_art:refresh,h_200,r_0,w_300/a_0/v1542240782/method-draw-image_22.png"
+          />
           <meta property="og:type" content="blog" />
 
           {/* Styles'n'Scripts */}
