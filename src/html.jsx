@@ -37,7 +37,6 @@ export default class HTML extends React.Component {
             type="text/css"
             href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"
           />
-          <link href="themes/prism-atom-dark.css" rel="stylesheet" />
 
           {headComponents}
           <link rel="shortcut icon" href={favicon} />

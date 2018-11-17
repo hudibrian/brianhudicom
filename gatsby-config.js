@@ -1,6 +1,6 @@
-const config = require("./data/SiteConfig");
+const config = require('./data/SiteConfig');
 
-const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -18,53 +18,93 @@ module.exports = {
     }
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
+    'gatsby-plugin-react-helmet',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "posts",
+        name: 'posts',
         path: `${__dirname}/content/${config.blogPostDir}`
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "authors",
+        name: 'authors',
         path: `${__dirname}/content/${config.blogAuthorDir}`
       }
     },
-    "gatsby-transformer-json",
+    'gatsby-transformer-json',
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 710
             }
           },
           {
-            resolve: "gatsby-remark-responsive-iframe"
+            resolve: 'gatsby-remark-responsive-iframe'
           },
-          "gatsby-remark-prismjs",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers"
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              plugins: [
+                {
+                  resolve: `gatsby-remark-prismjs`,
+                  options: {
+                    // Class prefix for <pre> tags containing syntax highlighting;
+                    // defaults to 'language-' (eg <pre class="language-js">).
+                    // If your site loads Prism into the browser at runtime,
+                    // (eg for use with libraries like react-live),
+                    // you may use this to prevent Prism from re-processing syntax.
+                    // This is an uncommon use-case though;
+                    // If you're unsure, it's best to use the default value.
+                    classPrefix: 'language-',
+                    // This is used to allow setting a language for inline code
+                    // (i.e. single backticks) by creating a separator.
+                    // This separator is a string and will do no white-space
+                    // stripping.
+                    // A suggested value for English speakers is the non-ascii
+                    // character '›'.
+                    inlineCodeMarker: null,
+                    // This lets you set up language aliases.  For example,
+                    // setting this to '{ sh: "bash" }' will let you use
+                    // the language "sh" which will highlight using the
+                    // bash highlighter.
+                    aliases: { js: 'javascript' },
+                    // This toggles the display of line numbers alongside the code.
+                    // To use it, add the following line in src/layouts/index.js
+                    // right after importing the prism color scheme:
+                    //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
+                    // Defaults to false.
+                    showLineNumbers: true,
+                    // If setting this to true, the parser won't handle and highlight inline
+                    // code used in markdown i.e. single backtick code like `this`.
+                    noInlineHighlight: false
+                  }
+                }
+              ]
+            }
+          },
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-autolink-headers'
         ]
       }
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: config.googleAnalyticsID
       }
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-embed-gist",
+            resolve: 'gatsby-remark-embed-gist',
             options: {
               // Optional:
 
@@ -80,17 +120,17 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-nprogress",
+      resolve: 'gatsby-plugin-nprogress',
       options: {
         color: config.themeColor
       }
     },
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-catch-links",
-    "gatsby-plugin-twitter",
-    "gatsby-plugin-sitemap",
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-twitter',
+    'gatsby-plugin-sitemap',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.siteTitle,
         short_name: config.siteTitle,
@@ -98,29 +138,29 @@ module.exports = {
         start_url: config.pathPrefix,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: "minimal-ui",
+        display: 'minimal-ui',
         icons: [
           {
-            src: "/logos/logo-192x192.png",
-            sizes: "192x192",
-            type: "image/png"
+            src: '/logos/logo-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
           },
           {
-            src: "/logos/logo-512x512.png",
-            sizes: "512x512",
-            type: "image/png"
+            src: '/logos/logo-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
           }
         ]
       }
     },
-    "gatsby-plugin-offline",
+    'gatsby-plugin-offline',
     {
-      resolve: "gatsby-plugin-feed",
+      resolve: 'gatsby-plugin-feed',
       options: {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "GatsbyJS Casper Starter";
+          ret.generator = 'GatsbyJS Casper Starter';
           return ret;
         },
         query: `
@@ -152,7 +192,7 @@ module.exports = {
                 author: rssMetadata.author,
                 url: rssMetadata.site_url + edge.node.fields.slug,
                 guid: rssMetadata.site_url + edge.node.fields.slug,
-                custom_elements: [{ "content:encoded": edge.node.html }]
+                custom_elements: [{ 'content:encoded': edge.node.html }]
               }));
             },
             query: `
