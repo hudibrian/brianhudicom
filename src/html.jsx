@@ -4,9 +4,6 @@
 import React from 'react';
 import favicon from './favicon.png';
 
-require('prismjs/themes/prism-dark.css');
-require('prismjs/plugins/line-numbers/prism-line-numbers.css');
-
 export default class HTML extends React.Component {
   render() {
     const { headComponents, body, postBodyComponents } = this.props;
