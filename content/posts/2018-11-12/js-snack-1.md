@@ -18,9 +18,23 @@ This is the first installment of what is going to be an ongoing series. We will 
 
 If you are new to JavaScript you may or may not have heard of arrow functions, but chances are if you have used any recent libraries or frameworks you have seen something like this:
 
-`gist:hudibrian/e5a5f9d337ecbe1cb74a94441ab689e6`
+```js
+doSomething = value => {
+  return value + 1;
+};
+
+// or maybe it looked like this:
+doSomething = value => value + 1;
+
+// or you saw something like this:
+myArray.forEach((element, index) => {
+  //do something
+});
+```
 
 What you see in the three examples above are called arrow functions, and they are a feature that was added in ES6.
+
+---
 
 ## Differences between Arrow functions and standard functions
 
@@ -36,11 +50,35 @@ At first arrow functions seemed weird. The syntax didn't seem straightforward, a
 
 1.  Implicit returns allow you to bypass the creation of a function block for a single return line, and just place your return logic directly after your arrow. This allows you to take functions that would normally take up ~3 lines of code for 1 line of logic in a return statement, and reduce them down to one line of code:
 
-`gist:hudibrian/4ef0c507acc514cbb03255ce5c5cf990`
+```js
+//standard function
+function getSum(value1, value2) {
+  return value1 + value2;
+}
+
+//arrow function
+getSum = (value1, value2) => value1 + value2;
+```
 
 2.  Anonymous and inline functions become more concise, and in my opinion, easier to quickly glance at and digest:
 
-`gist:hudibrian/4e14fdb5cffdd893e53a565e658d41da`
+```js
+const func = function() {
+  alert('this is standard inline');
+};
+
+const func = () => {
+  alert('this is arrow inline');
+};
+
+setTimeout(function() {
+  alert('this is standard anonymous');
+}, 100);
+
+setTimeout(() => {
+  alert('this is arrow anonymous');
+}, 100);
+```
 
 Overall, I think that arrow functions are a great way to make your code more concise and easier to digest.
 
