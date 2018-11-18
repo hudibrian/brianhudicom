@@ -13,7 +13,7 @@ tags:
 
 If you have run in to a situation where you need to dynamically render a component for each item in a list of items, you have no idea where to start, and don't know what `Array.map()` does, keep reading.
 
-If you understand `Array.map()` skip to the [Applying this concept to react section](#Applying this concept to react)
+If you understand `Array.map()` skip to the [Applying this concept to react section](#Applying-this-concept-to-react)
 
 ### What is array.map, and how do I use it?
 
@@ -33,6 +33,7 @@ If the syntax of the .map() in the code above is unfamiliar to you, check out my
 
 ### Applying this concept to react
 
+<a id="Applying-this-concept-to-react"/>
 Let's say you want to dynamically render your social media icons in your react application. So you create a `SocialIcon` component that recognizes the URL it is passed as a prop and renders the correct icon for that platform. You also have an array of URL's to pass to that component that contains all of your social media links. Now you can call `.map()` on that array, and return a unique component for each item (as shown in the example below).
 
 ```jsx
