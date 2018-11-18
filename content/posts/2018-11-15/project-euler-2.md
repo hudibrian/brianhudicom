@@ -55,7 +55,7 @@ console.log(sum);
 
 ---
 
-## Eplanation:
+## Explanation:
 
 _Firstly, I am using the [code runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) extension inside of vscode to run my solutions and print the answer in to my terminal. You could paste this code in to a code pen and observe the output in the console._
 
