@@ -1,7 +1,7 @@
 ---
 title: "Let's Build It: Gatsby Powered Ecommerce Site, Part 0"
 category: 'Tutorial'
-date: '2018-11-18'
+date: '2018-11-21'
 slug: 'gatsby-ecommerce-0'
 author: 'hudi'
 cover: 'https://res.cloudinary.com/bshrp/image/upload/q_auto/v1542693541/mikito-tateisi-333584-unsplash.webp'
