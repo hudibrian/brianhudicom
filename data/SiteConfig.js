@@ -2,8 +2,8 @@ module.exports = {
   blogPostDir: 'posts', // The name of directory that contains your posts.
   blogAuthorDir: 'sample-authors', // The name of directory that contains your 'authors' folder.
   blogAuthorId: 'hudi', // The default and fallback author ID used for blog posts without a defined author.
-  siteTitle: 'Hello, I am Brian Hudi', // Site title.
-  siteTitleAlt: 'B.Hudi Blog', // Alternative site title for SEO.
+  siteTitle: 'Brian Hudi', // Site title.
+  siteTitleAlt: 'Brian Hudi', // Alternative site title for SEO.
   siteLogo:
     'https://res.cloudinary.com/bshrp/image/upload/v1542003248/method-draw-image_19.svg', // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
   siteLogoLight:
