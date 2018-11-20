@@ -4,7 +4,7 @@ category: 'Project Euler'
 date: '2018-11-18'
 slug: 'project-euler-3'
 author: 'hudi'
-cover: 'https://res.cloudinary.com/bshrp/image/upload/v1542566480/account-calculate-calculating-220301.jpg'
+cover: 'https://res.cloudinary.com/bshrp/image/upload/q_auto/v1542566480/account-calculate-calculating-220301.webp'
 tags:
   - javascript
   - project euler
