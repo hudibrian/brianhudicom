@@ -42,7 +42,7 @@ export default class HTML extends React.Component {
           <link rel="shortcut icon" href={favicon} />
         </head>
         <body>
-          <div id="___gatsby" dangerouslySetInnerHTML={{ __html: body || 'loading js' }} />
+          <div id="___gatsby" dangerouslySetInnerHTML={{ __html: body }} />
           {postBodyComponents}
         </body>
       </html>
