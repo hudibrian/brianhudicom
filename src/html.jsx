@@ -34,8 +34,8 @@ export default class HTML extends React.Component {
           {/* Styles'n'Scripts */}
           <link
             rel="stylesheet"
-            type="text/css"
-            href="./styles.css"
+            type="text/html"
+            href="./styles/styles.css"
           />
 
           {headComponents}
