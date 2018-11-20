@@ -12,7 +12,7 @@ module.exports = {
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
   siteDescription: "Let's build a better web together.", // Website description used for RSS feeds/meta description tag.
   siteCover:
-    'https://res.cloudinary.com/bshrp/image/upload/v1542003026/steve-harvey-523112-unsplash.jpg', // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
+    'https://res.cloudinary.com/bshrp/image/upload/q_auto/v1542003026/steve-harvey-523112-unsplash.webp', // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
   siteNavigation: true, // If navigation is enabled the Menu button will be visible
   siteRss: '/rss.xml', // Path to the RSS file.
   siteRssAuthor: 'Brian Hudi', // The author name used in the RSS file
