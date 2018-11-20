@@ -31,13 +31,6 @@ export default class HTML extends React.Component {
           />
           <meta property="og:type" content="blog" />
 
-          {/* Styles'n'Scripts */}
-          <link
-            rel="stylesheet"
-            type="text/html"
-            href="./styles/styles.css"
-          />
-
           {headComponents}
           <link rel="shortcut icon" href={favicon} />
         </head>
