@@ -146,6 +146,48 @@ console.log(objAssignMethod);
 
 As you can see the `Object.assign` method made a copy of the method/function, and the JSON method did not.
 
+It is worth noting that with the `Object.assign()` method will only shallow copy the values nested inside of objects nested down three layers. Example:
+
+```js
+let myObj = {
+  id: 1,
+  name: 'brian hudi',
+  a: {
+    b: {
+      c: 12
+    }
+  }
+};
+
+let newObj = Object.assign({}, myObj);
+
+newObj.a.b.c = 6;
+
+
+
+console.log(newObj);
+// {
+//   id: 1,
+//   name: 'brian hudi',
+//   a: {
+//     b: {
+//       c: 6
+//     }
+//   }
+// };
+
+console.log(myObj):
+// {
+//   id: 1,
+//   name: 'brian hudi',
+//   a: {
+//     b: {
+//       c: 6
+//     }
+//   }
+// };
+```
+
 Thank you to the following reddit users for their suggestions / input:
 **[/u/adenzerda](https://www.reddit.com/user/adenzerda)**, **[/u/davidmdm](https://www.reddit.com/user/davidmdm)**, **[/u/pookage](https://www.reddit.com/user/pookage)**
 
