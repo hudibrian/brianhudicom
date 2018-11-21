@@ -1,12 +1,5 @@
 /** empty css file for component consistency **/
-.about {
-  display: grid;
-}
-
-.about-content {
-  margin: auto 33.33% auto 33.33%;
-}
-
-.text-center {
-  text-align: center;
+.about-post {
+  height: 100vh;
+  margin: 2em;
 }

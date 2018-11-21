@@ -1,12 +1,5 @@
 /** empty css file for component consistency **/
 .contact {
-  display: grid;
-}
-
-.contact-content {
-  margin: auto 33.33% auto 33.33%;
-}
-
-.text-center {
-  text-align: center;
+  height: 100vh;
+  margin: 2em;
 }
