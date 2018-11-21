@@ -11,7 +11,6 @@ class About extends Component {
           also do freelance web development on projects that I find interesting
           or challenging.
           <br />
-          <br />
           Please 
           {' '}
           <a href="/contact">contact me</a>
