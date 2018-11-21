@@ -188,6 +188,8 @@ console.log(myObj):
 // };
 ```
 
+---
+
 Thank you to the following reddit users for their suggestions / input:
 **[/u/adenzerda](https://www.reddit.com/user/adenzerda)**, **[/u/davidmdm](https://www.reddit.com/user/davidmdm)**, **[/u/pookage](https://www.reddit.com/user/pookage)**
 
