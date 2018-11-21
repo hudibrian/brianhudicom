@@ -4,7 +4,7 @@ category: 'JavaScript Snacks'
 date: '2018-11-12'
 slug: 'js-snack-1'
 author: 'hudi'
-cover: ''
+cover: '../images/blog/apple.jpg'
 tags:
   - javascript
   - snack

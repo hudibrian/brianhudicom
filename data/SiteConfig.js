@@ -4,15 +4,12 @@ module.exports = {
   blogAuthorId: 'hudi', // The default and fallback author ID used for blog posts without a defined author.
   siteTitle: 'Brian Hudi', // Site title.
   siteTitleAlt: 'Brian Hudi', // Alternative site title for SEO.
-  siteLogo:
-    'https://res.cloudinary.com/bshrp/image/upload/v1542003248/method-draw-image_19.svg', // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
-  siteLogoLight:
-    'https://res.cloudinary.com/bshrp/image/upload/v1542003105/method-draw-image_17.svg', // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
+  siteLogo: '../images/brianhudidark.svg', // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
+  siteLogoLight: '../images/brianhudilight.svg', // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
   siteUrl: 'https://brianhudi.com', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
   siteDescription: "Let's build a better web together.", // Website description used for RSS feeds/meta description tag.
-  siteCover:
-    'https://res.cloudinary.com/bshrp/image/upload/q_auto/v1542003026/steve-harvey-523112-unsplash.webp', // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
+  siteCover: '../images/splash.jpg', // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
   siteNavigation: true, // If navigation is enabled the Menu button will be visible
   siteRss: '/rss.xml', // Path to the RSS file.
   siteRssAuthor: 'Brian Hudi', // The author name used in the RSS file

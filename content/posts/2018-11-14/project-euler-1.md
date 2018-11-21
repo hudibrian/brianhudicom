@@ -4,7 +4,7 @@ category: 'Project Euler'
 date: '2018-11-14'
 slug: 'project-euler-1'
 author: 'hudi'
-cover: 'https://res.cloudinary.com/bshrp/image/upload/q_auto/v1542236270/bookcase-books-bookshelf-1370295_1.webp'
+cover: '../images/blog/bookcase.jpg'
 tags:
   - javascript
   - project euler

@@ -4,7 +4,7 @@ category: 'React'
 date: '2018-11-17'
 slug: 'dynamically-rendering-components-with-react'
 author: 'hudi'
-cover: 'https://res.cloudinary.com/bshrp/image/upload/q_auto/v1542524147/abstract-art-artistic-327509.webp'
+cover: '../images/blog/dynamic-components.jpg'
 tags:
   - javascript
   - react

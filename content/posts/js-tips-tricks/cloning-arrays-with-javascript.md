@@ -4,7 +4,7 @@ category: 'JavaScript Tips'
 date: '2018-11-21'
 slug: 'cloning-arrays-with-javascript'
 author: 'hudi'
-cover: '../images/blog/stormtrooper.webp'
+cover: '../images/blog/stormtrooper.jpg'
 tags:
   - javascript
   - tips & tricks
