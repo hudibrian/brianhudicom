@@ -52,7 +52,7 @@ class ContactPage extends Component {
           <Navigation config={config} onClose={this.handleOnClose} />
           <Helmet title={`Contact Me | ${config.siteTitle}`} />
 
-          <div className="contact">
+          <div className="about">
             <SiteWrapper>
               <MainHeader className="post-head" cover="">
                 <MainNav>

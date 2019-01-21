@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { Component } from 'react';
 import SocialMediaIcons from '../SocialMediaIcons/SocialMediaIcons';
 import config from '../../../data/SiteConfig';
@@ -10,8 +11,10 @@ class Contact extends Component {
       <div className="contact">
         <section className="post-content">
           <h2>Contact</h2>
-          Contact me through my email (bshudi@gmail.com) or any of my social
-          media outlets.
+          Contact me at <a href="mailto:bshudi@gmail.com">
+            bshudi@gmail.com
+          </a>{' '}
+          or any of my social media outlets.
           <SocialMediaIcons urls={config.siteSocialUrls} color="currentColor" />
         </section>
       </div>

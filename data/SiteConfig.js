@@ -2,13 +2,13 @@ module.exports = {
   blogPostDir: 'posts', // The name of directory that contains your posts.
   blogAuthorDir: 'sample-authors', // The name of directory that contains your 'authors' folder.
   blogAuthorId: 'hudi', // The default and fallback author ID used for blog posts without a defined author.
-  siteTitle: 'Brian Hudi', // Site title.
-  siteTitleAlt: 'Brian Hudi', // Alternative site title for SEO.
+  siteTitle: 'BHB', // Site title.
+  siteTitleAlt: 'Brian Hudi Blog', // Alternative site title for SEO.
   siteLogo: '../images/brianhudidark.svg', // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
   siteLogoLight: '../images/brianhudilight.svg', // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
   siteUrl: 'https://brianhudi.com', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
-  siteDescription: "Let's build a better web together.", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "Brian Hudi's Blog", // Website description used for RSS feeds/meta description tag.
   siteCover: '../images/splash.jpg', // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
   siteNavigation: true, // If navigation is enabled the Menu button will be visible
   siteRss: '/rss.xml', // Path to the RSS file.
@@ -21,27 +21,12 @@ module.exports = {
     'https://github.com/hudibrian',
     'https://twitter.com/brianhudi',
     'https://www.linkedin.com/in/brian-hudi-73256632/',
+    'https://www.facebook.com/bhudi',
     'mailto:bshudi@gmail.com'
   ],
   postDefaultCategoryID: 'Development', // Default category for posts.
   // Links to social profiles/projects you want to display in the navigation bar.
-  userLinks: [
-    {
-      label: 'GitHub',
-      url: 'https://github.com/hudibrian',
-      iconClassName: 'fa fa-github' // Disabled, see Navigation.jsx
-    },
-    {
-      label: 'Twitter',
-      url: 'https://twitter.com/brianhudi',
-      iconClassName: 'fa fa-twitter' // Disabled, see Navigation.jsx
-    },
-    {
-      label: 'Email',
-      url: 'mailto:bshudi@gmail.com',
-      iconClassName: 'fa fa-envelope' // Disabled, see Navigation.jsx
-    }
-  ],
+  userLinks: [],
   // Copyright string for the footer of the website and RSS feed.
   copyright: {
     label: 'Brian Hudi' // Label used before the year

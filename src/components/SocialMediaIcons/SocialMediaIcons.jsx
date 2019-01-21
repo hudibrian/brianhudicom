@@ -1,6 +1,6 @@
-import React from "react";
-import { SocialIcon } from "react-social-icons";
-import "./SocialMediaIcons.css";
+import React from 'react';
+import { SocialIcon } from 'react-social-icons';
+import './SocialMediaIcons.css';
 
 class SocialMediaIcons extends React.Component {
   render() {

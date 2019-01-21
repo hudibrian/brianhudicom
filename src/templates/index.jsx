@@ -14,7 +14,6 @@ import MainNav from '../components/MainNav/MainNav';
 import BlogLogo from '../components/BlogLogo/BlogLogo';
 import MenuButton from '../components/MenuButton/MenuButton';
 import PageTitle from '../components/PageTitle/PageTitle';
-import PageDescription from '../components/PageDescription/PageDescription';
 import PaginatedContent from '../components/PaginatedContent/PaginatedContent';
 import SocialMediaIcons from '../components/SocialMediaIcons/SocialMediaIcons';
 import MainLayout from '../components/layout';
@@ -67,12 +66,9 @@ class IndexTemplate extends React.Component {
             {/* All the main content gets inserted here */}
             <div className="home-template">
               {/* The big featured header */}
-              <MainHeader cover={config.siteCover}>
+              <MainHeader>
                 <MainNav overlay={config.siteCover}>
-                  <BlogLogo
-                    logo={config.siteLogoLight}
-                    title={config.siteTitle}
-                  />
+                  <BlogLogo title={config.siteTitle} />
                   <MenuButton
                     navigation={config.siteNavigation}
                     onClick={this.handleOnClick}
@@ -80,8 +76,10 @@ class IndexTemplate extends React.Component {
                 </MainNav>
                 <div className="vertical">
                   <div className="main-header-content inner">
-                    <PageTitle text={`Hello, I am ${config.siteTitle}`} />
-                    <PageDescription text={config.siteDescription} />
+                    <PageTitle
+                      color="#fff"
+                      text={`${config.siteDescription}`}
+                    />
                     <SocialMediaIcons
                       urls={config.siteSocialUrls}
                       color="currentColor"

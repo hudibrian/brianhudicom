@@ -1,19 +1,15 @@
-import React, { Component } from "react";
-import { Link } from "gatsby";
-import "./BlogLogo.css";
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import './BlogLogo.css';
 
 class BlogLogo extends Component {
   render() {
-    const { logo, url, title } = this.props;
-    if (logo) {
-      return (
-        <Link className="blog-logo" to={url || "/"}>
-          {/* style={{ boxShadow: "none" }}> */}
-          <img src={logo} alt={title} />
-        </Link>
-      );
-    }
-    return null;
+    const { url, title } = this.props;
+    return (
+      <Link className="blog-logo" to={url || '/'}>
+        <h2 className="blog-logo-text">{title}</h2>
+      </Link>
+    );
   }
 }
 
