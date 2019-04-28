@@ -1,6 +1,6 @@
-import React, { Component, createElement, isValidElement } from 'react';
-import GetNavList from './GetNavList';
-import './Navigation.css';
+import React, { Component, createElement, isValidElement } from "react";
+import GetNavList from "./GetNavList";
+import "./Navigation.css";
 
 const Divider = () => null;
 
@@ -19,7 +19,7 @@ const ListItem = props => {
 };
 
 const mapToListParts = (item, index) => {
-  if (typeof item === 'string' || typeof item === 'number') {
+  if (typeof item === "string" || typeof item === "number") {
     return createElement(ListItem, { key: item, primaryText: item });
   }
   if (isValidElement(item)) {
@@ -53,7 +53,7 @@ class Navigation extends Component {
         <div className="nav">
           <h3 className="nav-title">Menu</h3>
           <a href="#close" className="nav-close" onClick={onClose}>
-            <span className="hidden">Close</span>
+            <span className="hidden" />
           </a>
           <ul>{navItems.map(mapToListParts)}</ul>
         </div>
