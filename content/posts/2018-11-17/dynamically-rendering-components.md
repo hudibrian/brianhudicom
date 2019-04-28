@@ -1,10 +1,10 @@
 ---
-title: 'Dynamically Rendering React Components with Array.Map'
-category: 'React'
-date: '2018-11-17'
-slug: 'dynamically-rendering-components-with-react'
-author: 'hudi'
-cover: '../images/blog/dynamic-components.jpg'
+title: "Dynamically Rendering React Components with Array.Map"
+category: "React"
+date: "2018-11-17"
+slug: "dynamically-rendering-components-with-react"
+author: "hudi"
+cover: "../images/blog/dynamic-components.jpg"
 tags:
   - javascript
   - react
@@ -38,9 +38,9 @@ Let's say you want to dynamically render your social media icons in your react a
 
 ```jsx
 const urls = [
-  'https://github.com/hudibrian',
-  'https://facebook.com/bhudi',
-  'https://twitter.com/brianhudi'
+  "https://github.com/hudibrian",
+  "https://facebook.com/bhudi",
+  "https://twitter.com/brianhudi"
 ];
 
 return (

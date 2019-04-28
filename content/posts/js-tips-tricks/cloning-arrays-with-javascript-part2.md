@@ -1,10 +1,10 @@
 ---
-title: 'Cloning an Array with JavaScript: Part 2'
-category: 'JavaScript Tips'
-date: '2018-11-22'
-slug: 'cloning-arrays-with-javascript-2'
-author: 'hudi'
-cover: '../images/blog/stormtrooper.jpg'
+title: "Cloning an Array with JavaScript: Part 2"
+category: "JavaScript Tips"
+date: "2018-11-22"
+slug: "cloning-arrays-with-javascript-2"
+author: "hudi"
+cover: "../images/blog/stormtrooper.jpg"
 tags:
   - javascript
   - tips & tricks
@@ -29,7 +29,7 @@ _For context please check out the first post I linked to up above, it is a very 
 
 To use `Array.from` to clone an array you would just set a variable equal to the result of calling `Array.from()`, like so:
 
-```js
+```javascript
 const myArray = [1, 2, 3, 4];
 const newArray = Array.from(myArray);
 // newArray = [1, 2, 3, 4]
@@ -43,7 +43,7 @@ A spread operator (represented by an ellipse infront of an iterable) allows an a
 
 To use a spread operator to copy a list of elements you would implement it as follows:
 
-```js
+```javascript
 const myArray = [1, 2, 3, 4];
 const newArray = [...myArray];
 // newArray = [1, 2, 3, 4]
@@ -66,12 +66,12 @@ I need to mention that ALL of the ways I have shown to clone an array, in this p
 
 The best way to make a deep copy of an object that doesn't have any methods/functions in it, without using a library, is to use the JSON object to turn the object in to a JSON string, and then parse it back in to an object. Like so:
 
-```js
+```javascript
 let myObj = {
   id: 1,
-  name: 'brian hudi',
+  name: "brian hudi",
   car: {
-    make: 'chevy'
+    make: "chevy"
   }
 };
 
@@ -87,8 +87,8 @@ let newObject = JSON.parse(JSON.stringify(myObj));
 
 What happens to `newObject` if I change a property on `myObj`?
 
-```js
-myObj.car.make = 'ford';
+```javascript
+myObj.car.make = "ford";
 console.log(myObj);
 // {
 //   id: 1,
@@ -116,12 +116,12 @@ As you can see from the output the new object we created stays in tact with the 
 
 `Object.assign()` should be used when you are trying to copy an object that has methods/functions attached to it. Because `JSON.parse(JSON.stringify(object))` will not copy methods. This is shown in the example below:
 
-```js
+```javascript
 let myObj = {
   id: 1,
-  name: 'brian hudi',
+  name: "brian hudi",
   func: function getCar() {
-    return 'chevy';
+    return "chevy";
   }
 };
 
@@ -148,7 +148,7 @@ As you can see the `Object.assign` method made a copy of the method/function, an
 
 It is worth noting that with the `Object.assign()` method will only shallow copy the values nested inside of objects nested down three layers. Example:
 
-```js
+```javascript
 let myObj = {
   id: 1,
   name: 'brian hudi',

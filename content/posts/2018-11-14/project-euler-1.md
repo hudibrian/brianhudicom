@@ -1,10 +1,10 @@
 ---
-title: 'Learning JavaScript with Project Euler'
-category: 'Project Euler'
-date: '2018-11-14'
-slug: 'project-euler-1'
-author: 'hudi'
-cover: '../images/blog/bookcase.jpg'
+title: "Learning JavaScript with Project Euler"
+category: "Project Euler"
+date: "2018-11-14"
+slug: "project-euler-1"
+author: "hudi"
+cover: "../images/blog/bookcase.jpg"
 tags:
   - javascript
   - project euler
@@ -23,7 +23,7 @@ below 1000._
 
 Here is my solution:
 
-```js
+```javascript
 /**
  * If we list all the natural numbers below 10 that are multiples of 3 or 5,
  * we get 3, 5, 6 and 9. The sum of these multiples is 23.

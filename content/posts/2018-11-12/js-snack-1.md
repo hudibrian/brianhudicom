@@ -1,10 +1,10 @@
 ---
-title: 'JavaScript Snack #1: Arrow Functions'
-category: 'JavaScript Snacks'
-date: '2018-11-12'
-slug: 'js-snack-1'
-author: 'hudi'
-cover: '../images/blog/apple.jpg'
+title: "JavaScript Snack #1: Arrow Functions"
+category: "JavaScript Snacks"
+date: "2018-11-12"
+slug: "js-snack-1"
+author: "hudi"
+cover: "../images/blog/apple.jpg"
 tags:
   - javascript
   - snack
@@ -18,7 +18,7 @@ This is the first installment of what is going to be an ongoing series. We will 
 
 If you are new to JavaScript you may or may not have heard of arrow functions, but chances are if you have used any recent libraries or frameworks you have seen something like this:
 
-```js
+```javascript
 doSomething = value => {
   return value + 1;
 };
@@ -50,7 +50,7 @@ At first arrow functions seemed weird. The syntax didn't seem straightforward, a
 
 1.  Implicit returns allow you to bypass the creation of a function block for a single return line, and just place your return logic directly after your arrow. This allows you to take functions that would normally take up ~3 lines of code for 1 line of logic in a return statement, and reduce them down to one line of code:
 
-```js
+```javascript
 //standard function
 function getSum(value1, value2) {
   return value1 + value2;
@@ -62,21 +62,21 @@ getSum = (value1, value2) => value1 + value2;
 
 2.  Anonymous and inline functions become more concise, and in my opinion, easier to quickly glance at and digest:
 
-```js
+```javascript
 const func = function() {
-  alert('this is standard inline');
+  alert("this is standard inline");
 };
 
 const func = () => {
-  alert('this is arrow inline');
+  alert("this is arrow inline");
 };
 
 setTimeout(function() {
-  alert('this is standard anonymous');
+  alert("this is standard anonymous");
 }, 100);
 
 setTimeout(() => {
-  alert('this is arrow anonymous');
+  alert("this is arrow anonymous");
 }, 100);
 ```
 
