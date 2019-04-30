@@ -1,13 +1,13 @@
-// This is where project configuration and plugin options are located. 
+// This is where project configuration and plugin options are located.
 // Learn more: https://gridsome.org/docs/config
 
-// Changes here requires a server restart.
-// To restart press CTRL + C in terminal and run `gridsome develop`
-
 module.exports = {
-  siteName: 'Gridsome Blog Starter',
-  siteDescription: 'A simple, hackable & minimalistic starter for Gridsome that uses Markdown for content.',
-
+  siteName: 'Brian Hudi',
+  siteUrl: 'https://www.brianhudi.com',
+  siteDescription: 'Its nice to meet you friend',
+  icon: 'src/assets/images/author.jpg',
+  favicon: 'src/assets/images/author.jpg',
+  touchicon: 'src/assets/images/author.jpg',
   plugins: [
     {
       // Create posts from markdown files
@@ -15,17 +15,17 @@ module.exports = {
       options: {
         typeName: 'Post',
         path: 'content/posts/*.md',
-        route: '/:slug',
+        route: 'blog/:slug',
         refs: {
           // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
           tags: {
             typeName: 'Tag',
-            route: '/tag/:id',
-            create: true
-          }
-        }
-      }
-    }
+            route: 'blog/tag/:id',
+            create: true,
+          },
+        },
+      },
+    },
   ],
 
   transformers: {
@@ -34,9 +34,7 @@ module.exports = {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
       anchorClassName: 'icon icon-link',
-      plugins: [
-        '@gridsome/remark-prismjs'
-      ]
-    }
+      plugins: ['@gridsome/remark-prismjs'],
+    },
   },
-}
+};
