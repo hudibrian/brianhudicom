@@ -35,5 +35,9 @@ export default {
     width: 40px;
     margin-right: 0.5em;
   }
+
+  &__text {
+    cursor: pointer;
+  }
 }
 </style>

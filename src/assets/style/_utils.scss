@@ -1,7 +1,26 @@
 .text-center {
-	text-align: center;
+  text-align: center;
 }
 
 .space-bottom {
-	margin-bottom: var(--space);
+  margin-bottom: var(--space);
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    'left header  right'
+    'left content right'
+    'left content right'
+    'left footer  right';
 }

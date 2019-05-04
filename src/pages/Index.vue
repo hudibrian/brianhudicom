@@ -1,11 +1,14 @@
 <template>
   <Layout :show-logo="false">
     <!-- Author intro -->
-    <Author :show-title="true" />
+    <IntroDetail :show-title="true" />
 
-    <!-- List tiles -->
-    <div class="tileGrid">
-      <BottomNav :data="$page"></BottomNav>
+    <div class="posts">
+      <PostCard
+        v-for="edge in $page.posts.edges"
+        :key="edge.node.id"
+        :post="edge.node"
+      />
     </div>
   </Layout>
 </template>
@@ -39,15 +42,14 @@ query Posts {
 </page-query>
 
 <script>
-import Author from "~/components/Author.vue";
-import BottomNav from "~/components/BottomNav.vue";
+import IntroDetail from "~/components/IntroDetail.vue";
+import PostCard from "~/components/PostCard.vue";
 
 export default {
   components: {
-    Author,
-    BottomNav
+    IntroDetail,
+    PostCard
   },
-
   metaInfo: {
     title: "Home Page"
   }
@@ -55,14 +57,5 @@ export default {
 </script>
 
 <style lang="scss">
-.tileGrid {
-  display: flex;
-  justify-content: center;
-
-  &__item {
-    width: 140px;
-    height: 140px;
-  }
-}
 </style>
 

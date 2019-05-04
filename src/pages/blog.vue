@@ -1,8 +1,5 @@
 <template>
   <Layout :show-logo="false">
-    <!-- Author intro -->
-    <Author :show-title="true" />
-
     <!-- List posts -->
     <div class="posts">
       <PostCard
@@ -43,12 +40,10 @@
 </page-query>
 
 <script>
-import Author from "~/components/Author.vue";
 import PostCard from "~/components/PostCard.vue";
 
 export default {
   components: {
-    Author,
     PostCard
   },
   metaInfo: {

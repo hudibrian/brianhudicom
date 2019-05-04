@@ -1,11 +1,24 @@
 <template>
-  <div id="app">
+  <div id="app" class="app-grid">
     <header class="header">
-      <div class="header__left">
-        <Logo v-if="showLogo" />
-      </div>
+      <g-link class="flex-row title-link" to="/">
+        <g-image
+          alt="Author image"
+          class="logo"
+          src="~/assets/images/author.jpg"
+          width="50px"
+          blur="5"
+        />
+        <p class="no-margin title">
+          Brian Hudi
+        </p>
+      </g-link>
 
       <div class="header__right">
+        <g-link to="/blog">Blog</g-link>
+        <g-link to="/about">About</g-link>
+        <g-link to="/reading-list">Reading List</g-link>
+        <g-link to="/blog">Blog</g-link>
         <ToggleTheme />
       </div>
     </header>
@@ -15,8 +28,8 @@
     </main>
 
     <footer class="footer">
-      <span class="footer__copyright"
-        >Copyright Brian Hudi {{ new Date().getFullYear() }}.
+      <span class="footer__copyright">
+        Copyright Brian Hudi {{ new Date().getFullYear() }}.
       </span>
     </footer>
   </div>
@@ -38,19 +51,38 @@ export default {
 </script>
 
 <style lang="scss">
+.links {
+  padding: 10px;
+}
+.logo {
+  margin-right: 5px;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 1.5em;
+  border-bottom: 4px solid #401c5e;
+  color: var(--title-color);
+}
+
+.title-link {
+  text-decoration: none;
+}
+
 .header {
+  grid-area: header;
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: var(--header-height);
   padding: 0 calc(var(--space) / 2);
-  top: 0;
   z-index: 10;
 
   &__left,
   &__right {
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
   }
 
   @media screen and (min-width: 1300px) {
@@ -63,9 +95,11 @@ export default {
 .main {
   margin: 0 auto;
   padding: 1.5vw 15px 0;
+  grid-area: content;
 }
 
 .footer {
+  grid-area: footer;
   display: flex;
   align-items: center;
   justify-content: center;

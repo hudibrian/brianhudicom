@@ -1,17 +1,8 @@
 <template>
-  <div class="author">
-    <g-image
-      alt="Author image"
-      class="author__image"
-      src="~/assets/images/author.jpg"
-      blur="5"
-    />
+  <div class="intro">
+    <p v-if="showTitle" class="intro__site-title"></p>
 
-    <p v-if="showTitle" class="author__site-title">
-      <b>{{ $static.metaData.siteName }}</b>
-    </p>
-
-    <p class="author__intro">
+    <p class="intro__description">
       {{ $static.metaData.siteDescription }}
     </p>
   </div>
@@ -33,18 +24,17 @@ export default {
 </script>
 
 <style lang="scss">
-.author {
+.intro {
   margin: 0 auto;
   max-width: 300px;
   text-align: center;
 
   &__image {
-    border-radius: 10%;
-    width: 6em;
-    height: 6em;
+    width: 100%;
+    height: 100%;
   }
 
-  &__intro {
+  &__description {
     margin-top: -1.5em;
     opacity: 0.8;
   }
