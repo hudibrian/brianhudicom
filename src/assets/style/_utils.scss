@@ -17,10 +17,16 @@
 
 .app-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 800px 1fr;
   grid-template-areas:
     'left header  right'
     'left content right'
     'left content right'
     'left footer  right';
+}
+
+@media screen and (max-width: 800px) {
+  .app-grid {
+    grid-template-columns: 1fr 100% 1fr;
+  }
 }

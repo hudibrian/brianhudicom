@@ -9,17 +9,29 @@
           width="50px"
           blur="5"
         />
-        <p class="no-margin title">
+        <p class="title">
           Brian Hudi
         </p>
       </g-link>
 
       <div class="header__right">
-        <g-link to="/blog">Blog</g-link>
-        <g-link to="/about">About</g-link>
-        <g-link to="/reading-list">Reading List</g-link>
-        <g-link to="/blog">Blog</g-link>
-        <ToggleTheme />
+        <a
+          href="javascript:void(0);"
+          class="hamburger"
+          v-on:click="addMenuClass()"
+        >
+          <font-awesome
+            :icon="isMenu ? ['fas', 'times'] : ['fas', 'bars']"
+            size="lg"
+          />
+        </a>
+        <div class="menu" v-bind:class="{ 'show-menu': isMenu }">
+          <g-link to="/blog">Blog</g-link>
+          <g-link to="/about">About</g-link>
+          <g-link to="/reading-list">Reading List</g-link>
+          <g-link to="/blog">Blog</g-link>
+          <ToggleTheme class="z10" />
+        </div>
       </div>
     </header>
 
@@ -46,23 +58,75 @@ export default {
   components: {
     Logo,
     ToggleTheme
+  },
+  data: () => {
+    return {
+      isMenu: false
+    };
+  },
+  methods: {
+    addMenuClass: function() {
+      this.isMenu = !this.isMenu;
+    }
   }
 };
 </script>
 
 <style lang="scss">
-.links {
-  padding: 10px;
+.menu a {
+  padding-right: 20px;
+  text-decoration: none;
 }
+
+@media screen and (max-width: 800px) {
+  .menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .z10 {
+    z-index: 10;
+  }
+  .menu.show-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    font-size: 2em;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+
+    a {
+      padding-right: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.hamburger {
+  z-index: 10;
+}
+
 .logo {
   margin-right: 5px;
   border-radius: 10px;
 }
 
 .title {
-  font-size: 1.5em;
-  border-bottom: 4px solid #401c5e;
+  font-size: 1.1em;
   color: var(--title-color);
+  margin: auto;
 }
 
 .title-link {
@@ -82,7 +146,6 @@ export default {
   &__right {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
   }
 
   @media screen and (min-width: 1300px) {
@@ -93,7 +156,6 @@ export default {
 }
 
 .main {
-  margin: 0 auto;
   padding: 1.5vw 15px 0;
   grid-area: content;
 }
