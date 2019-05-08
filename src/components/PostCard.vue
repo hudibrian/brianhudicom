@@ -6,7 +6,7 @@
     <div class="post-card__header">
       <g-image
         alt="Cover image"
-        v-if="post.cover"
+        v-if="post.cover && showCover"
         class="post-card__image"
         :src="post.cover"
       />
@@ -32,13 +32,13 @@ export default {
     PostMeta,
     PostTags
   },
-  props: ["post"]
+  props: ["post", "showCover"]
 };
 </script>
 
 <style lang="scss">
 .post-card {
-  margin-bottom: var(--space);
+  margin-bottom: 1em;
   position: relative;
 
   &__header {

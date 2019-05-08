@@ -1,5 +1,7 @@
 <template>
   <div class="intro">
+    <hr />
+
     <div class="intro__description flex-row">
       <g-image
         alt="headshot of brian hudi"
@@ -9,13 +11,12 @@
       />
       <div class="intro__text">
         <p class="intro__site-title">
-          Hi, I am Brian Hudi. I help people bring their ideas to life, with
-          code.
+          Hi, I'm Brian Hudi. I help people bring their ideas to life, with
+          code. Let's change the world together.
         </p>
-        If you are interested in hearing more about me, head over to my
-        <g-link to="/profile">profile</g-link>
       </div>
     </div>
+    <hr />
   </div>
 </template>
 
@@ -44,7 +45,7 @@ export default {};
   }
 
   .intro__text {
-    padding: 15px 0 15px 0;
+    padding: 15px 0 0 0;
     margin: 0;
     text-align: center;
   }
@@ -60,7 +61,6 @@ export default {};
 
   &__description {
     opacity: 0.8;
-    margin-bottom: 2vw;
     justify-content: center;
   }
 

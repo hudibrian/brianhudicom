@@ -35,3 +35,37 @@
     grid-template-columns: 1fr 100% 1fr;
   }
 }
+
+.pagination {
+  padding: 0.2em;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.small-text {
+  font-size: 0.8em;
+}
+
+.pl5px {
+  padding-left: 5px;
+}
+
+.pb5px {
+  padding-bottom: 5px;
+}
+
+.float-right {
+  float: right;
+}
