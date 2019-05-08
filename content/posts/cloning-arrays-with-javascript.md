@@ -1,14 +1,14 @@
 ---
-title: "Cloning an Array with JavaScript"
-category: "JavaScript Tips"
-date: "2018-11-21"
-slug: "cloning-arrays-with-javascript"
-author: "hudi"
-cover: "./images/blog/stormtrooper.jpg"
+title: 'Cloning an Array with JavaScript'
+category: 'JavaScript Tips'
+date: '2018-11-21'
+slug: 'cloning-arrays-with-javascript'
+author: 'hudi'
+cover: './images/blog/stormtrooper.jpg'
 tags:
   - javascript
   - tips & tricks
-description: ""
+description: 'Earlier today I was perusing a code base that I am working in, and found a function named cloneArray. This function looked something like this'
 ---
 
 Earlier today I was perusing a code base that I am working in, and found a function named cloneArray. This function looked something like this:

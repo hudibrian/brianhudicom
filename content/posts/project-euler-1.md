@@ -1,14 +1,14 @@
 ---
-title: "Learning JavaScript with Project Euler"
-category: "Project Euler"
-date: "2018-11-14"
-slug: "project-euler-1"
-author: "hudi"
-cover: "./images/blog/bookcase.jpg"
+title: 'Learning JavaScript with Project Euler'
+category: 'Project Euler'
+date: '2018-11-14'
+slug: 'project-euler-1'
+author: 'hudi'
+cover: './images/blog/bookcase.jpg'
 tags:
   - javascript
   - project euler
-description: ""
+description: 'If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of'
 ---
 
 Earlier this year I had decided that I was going to go down the route of solving at least 1 [Project Euler](https://projecteuler.net/) problem a day for the rest of 2018. I failed miserably. If you look at the github repo I made for it, you will see I only have 3 solutions (https://github.com/hudibrian/Project-Euler-Solutions).

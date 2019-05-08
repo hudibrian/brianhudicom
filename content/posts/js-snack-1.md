@@ -1,14 +1,14 @@
 ---
-title: "JavaScript Snack #1: Arrow Functions"
-category: "JavaScript Snacks"
+title: 'JavaScript Snack #1: Arrow Functions'
+category: 'JavaScript Snacks'
 date: 2018-11-12
-slug: "js-snack-1"
+slug: 'js-snack-1'
 series: true
 published: true
-author: "hudi"
-cover: "./images/blog/apple.jpg"
-tags: ["javascript", "snack"]
-description: ""
+author: 'hudi'
+cover: './images/blog/apple.jpg'
+tags: ['javascript', 'snack']
+description: 'This is the first installment of what is going to be an ongoing series. We will cover small, digestible JavaScript problems or concepts that take just a few minutes to go through'
 ---
 
 # Intro
@@ -65,19 +65,19 @@ getSum = (value1, value2) => value1 + value2;
 
 ```javascript
 const func = function() {
-  alert("this is standard inline");
+  alert('this is standard inline');
 };
 
 const func = () => {
-  alert("this is arrow inline");
+  alert('this is arrow inline');
 };
 
 setTimeout(function() {
-  alert("this is standard anonymous");
+  alert('this is standard anonymous');
 }, 100);
 
 setTimeout(() => {
-  alert("this is arrow anonymous");
+  alert('this is arrow anonymous');
 }, 100);
 ```
 

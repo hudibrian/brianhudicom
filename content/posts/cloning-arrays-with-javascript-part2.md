@@ -1,12 +1,12 @@
 ---
-title: "Cloning an Array with JavaScript: Part 2"
-category: "JavaScript Tips"
-date: "2018-11-22"
-slug: "cloning-arrays-with-javascript-2"
-author: "hudi"
-cover: "./images/blog/stormtrooper.jpg"
+title: 'Cloning an Array with JavaScript: Part 2'
+category: 'JavaScript Tips'
+date: '2018-11-22'
+slug: 'cloning-arrays-with-javascript-2'
+author: 'hudi'
+cover: './images/blog/stormtrooper.jpg'
 tags: [javascript, tips & tricks]
-description: ""
+description: 'I wrote a post about cloning arrays, and a piece of code I had found in a code base I was working on. After writing that post, a couple of readers brought some alternative methods, and concerns to my attention. That is what I will cover in this post'
 ---
 
 ##### [Cloning an Array with JavaScript: Part 1](https://brianhudi.com/cloning-arrays-with-javascript)
@@ -68,10 +68,10 @@ The best way to make a deep copy of an object that doesn't have any methods/func
 ```javascript
 let myObj = {
   id: 1,
-  name: "brian hudi",
+  name: 'brian hudi',
   car: {
-    make: "chevy"
-  }
+    make: 'chevy',
+  },
 };
 
 let newObject = JSON.parse(JSON.stringify(myObj));
@@ -87,7 +87,7 @@ let newObject = JSON.parse(JSON.stringify(myObj));
 What happens to `newObject` if I change a property on `myObj`?
 
 ```javascript
-myObj.car.make = "ford";
+myObj.car.make = 'ford';
 console.log(myObj);
 // {
 //   id: 1,
@@ -118,10 +118,10 @@ As you can see from the output the new object we created stays in tact with the 
 ```javascript
 let myObj = {
   id: 1,
-  name: "brian hudi",
+  name: 'brian hudi',
   func: function getCar() {
-    return "chevy";
-  }
+    return 'chevy';
+  },
 };
 
 let jsonMethod = JSON.parse(JSON.stringify(myObj));
