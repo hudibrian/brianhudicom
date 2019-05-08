@@ -1,6 +1,3 @@
-// This is where project configuration and plugin options are located.
-// Learn more: https://gridsome.org/docs/config
-
 module.exports = {
   siteName: 'Brian Hudi',
   siteUrl: 'https://www.brianhudi.com',
@@ -22,6 +19,13 @@ module.exports = {
             create: true,
           },
         },
+      },
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'PageContent',
+        path: 'content/pages/*.md',
       },
     },
     {
