@@ -1,10 +1,9 @@
 <template>
   <Layout :show-logo="false">
     <!-- Author intro -->
-    <IntroDetail />
-    <div>
-      <h4>Most Recent Blog Posts</h4>
-      <PostCard
+    <IntroDetail class="mt2em" />
+    <div class="mt2em content-box">
+      <RecentPosts
         v-for="edge in $page.posts.edges"
         :key="edge.node.id"
         :post="edge.node"
@@ -46,12 +45,12 @@ query Posts {
 
 <script>
 import IntroDetail from "~/components/IntroDetail.vue";
-import PostCard from "~/components/PostCard.vue";
+import RecentPosts from "~/components/RecentPosts.vue";
 
 export default {
   components: {
     IntroDetail,
-    PostCard
+    RecentPosts
   },
   metaInfo: {
     title: "Home Page"
@@ -60,5 +59,8 @@ export default {
 </script>
 
 <style lang="scss">
+.mt2em {
+  margin-top: 2em;
+}
 </style>
 

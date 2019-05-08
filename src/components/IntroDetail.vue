@@ -34,34 +34,17 @@ export default {};
 </script>
 
 <style lang="scss">
-@media screen and (max-width: 600px) {
-  .intro__description {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .intro__logo {
-    width: 150px;
-  }
-
-  .intro__text {
-    padding: 15px 0 0 0;
-    margin: 0;
-    text-align: center;
-  }
-}
 .intro {
   margin: 0 auto;
   max-width: 600px;
 
-  &__image {
-    width: 100%;
-    height: 100%;
-  }
-
   &__description {
-    opacity: 0.8;
     justify-content: center;
+
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__site-title {
@@ -70,12 +53,24 @@ export default {};
   }
 
   &__text {
-    margin: auto auto auto 1.2em;
-    justify-content: center;
+    padding-left: 1.2em;
+    opacity: 0.8;
+    margin: auto;
+
+    @media screen and (max-width: 600px) {
+      padding: 15px 0 0 0;
+      margin: 0;
+      text-align: center;
+    }
   }
 
   &__logo {
     border-radius: 10px;
+    width: 400px;
+
+    @media screen and (max-width: 600px) {
+      width: 150px;
+    }
   }
 }
 </style>
