@@ -1,7 +1,7 @@
 <template>
   <Layout :show-logo="false">
     <!-- Author intro -->
-    <IntroDetail :show-title="true" />
+    <IntroDetail />
 
     <div class="posts">
       <PostCard

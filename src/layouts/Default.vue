@@ -1,14 +1,17 @@
 <template>
   <div id="app" class="app-grid">
     <header class="header">
-      <HeaderLogoAndTitle :title="'Brian Hudi'"></HeaderLogoAndTitle>
+      <HeaderLogoAndTitle
+        :showLogo="showLogo"
+        :title="'Brian Hudi'"
+      ></HeaderLogoAndTitle>
 
       <div class="header__right">
         <HorizontalMenu>
           <g-link to="/">Home</g-link>
           <g-link to="/blog">Blog</g-link>
+          <g-link to="/microblog">Microblog</g-link>
           <g-link to="/about">About</g-link>
-          <g-link to="/reading-list">Reading List</g-link>
           <ToggleTheme class="z10" />
         </HorizontalMenu>
       </div>

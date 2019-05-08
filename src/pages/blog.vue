@@ -1,5 +1,5 @@
 <template>
-  <Layout :show-logo="false">
+  <Layout :show-logo="true">
     <!-- List posts -->
     <div class="posts">
       <PostCard

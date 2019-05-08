@@ -15,6 +15,11 @@
   flex-direction: row;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .app-grid {
   display: grid;
   grid-template-columns: 1fr 800px 1fr;

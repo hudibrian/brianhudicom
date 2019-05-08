@@ -1,6 +1,7 @@
 <template>
   <g-link class="flex-row link" to="/">
     <g-image
+      v-if="showLogo"
       alt="Website logo"
       class="logo"
       src="~/assets/images/author.jpg"
@@ -15,7 +16,7 @@
 
 <script>
 export default {
-  props: ["title", "logoPath", "width", "blur"]
+  props: ["showLogo", "title"]
 };
 </script>
 
@@ -23,11 +24,11 @@ export default {
 .logo {
   margin-right: 10px;
   border-radius: 10px;
+  width: 50px;
 }
 
 .title {
   font-size: 1.1em;
-  color: var(--title-color);
   margin: auto;
 }
 
