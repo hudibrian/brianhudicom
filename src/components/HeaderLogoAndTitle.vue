@@ -28,6 +28,7 @@ export default {
 }
 
 .title {
+  flex: 1 auto;
   font-size: 1.1em;
   margin: auto;
 }

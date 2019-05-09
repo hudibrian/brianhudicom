@@ -2,20 +2,20 @@
   <div id="app" class="app-grid">
     <header class="header">
       <HeaderLogoAndTitle
+        class="header__left"
         :showLogo="showLogo"
         :title="'Brian Hudi'"
       ></HeaderLogoAndTitle>
 
-      <div class="header__right">
-        <HorizontalMenu>
-          <g-link to="/">Home</g-link>
-          <g-link to="/blog">Blog</g-link>
-          <g-link to="/microblog">Microblog</g-link>
-          <g-link to="/about">About</g-link>
-          <ToggleTheme class="z10" />
-        </HorizontalMenu>
-      </div>
+      <HorizontalMenu class="header__right">
+        <g-link to="/">Home</g-link>
+        <g-link to="/blog">Blog</g-link>
+        <g-link to="/microblog">Microblog</g-link>
+        <g-link to="/about">About</g-link>
+      </HorizontalMenu>
     </header>
+
+    <div></div>
 
     <main class="main">
       <slot />
@@ -61,10 +61,17 @@ export default {
   min-height: var(--header-height);
   padding: 0 15px;
   z-index: 10;
+  font-size: 1.2em;
 
-  &__left,
+  &__left {
+    display: flex;
+    flex: 3 auto;
+  }
+
   &__right {
     display: flex;
+    flex: 1 auto;
+    justify-content: flex-end;
     align-items: center;
   }
 }

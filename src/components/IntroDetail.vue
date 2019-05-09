@@ -1,7 +1,5 @@
 <template>
-  <div class="intro">
-    <hr />
-
+  <div class="intro content-box">
     <div class="intro__description flex-row">
       <g-image
         alt="headshot of brian hudi"
@@ -16,7 +14,6 @@
         </p>
       </div>
     </div>
-    <hr />
   </div>
 </template>
 
@@ -35,9 +32,6 @@ export default {};
 
 <style lang="scss">
 .intro {
-  margin: 0 auto;
-  max-width: 600px;
-
   &__description {
     justify-content: center;
 
@@ -65,10 +59,15 @@ export default {};
   }
 
   &__logo {
-    border-radius: 10px;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    margin-left: calc(var(--space) * -1);
+    margin-bottom: calc(var(--space) / -1);
+    margin-top: calc(var(--space) * -1);
     width: 400px;
-
     @media screen and (max-width: 600px) {
+      border-radius: var(--radius);
+      margin: 0;
       width: 150px;
     }
   }

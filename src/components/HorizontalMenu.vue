@@ -1,13 +1,18 @@
 <template>
-  <div>
-    <a href="javascript:void(0);" class="hamburger" v-on:click="showMenu()">
-      <font-awesome
-        :icon="isMenu ? ['fas', 'times'] : ['fas', 'bars']"
-        size="lg"
-      />
-    </a>
+  <div class="menu">
+    <button
+      class="hamburger hamburger--spin"
+      type="button"
+      :class="isMenu ? 'is-active' : ''"
+      v-on:click="showMenu()"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
     <div
-      class="menu"
+      class="menu__content"
       v-bind:class="{ 'show-menu': isMenu }"
       v-on:click="showMenu()"
     >
@@ -32,19 +37,22 @@ export default {
 </script>
 
 <style lang="scss">
-.menu a {
-  padding-right: 20px;
-  text-decoration: none;
+.menu {
+  &__content {
+    display: flex;
+    flex: 1 auto;
+    justify-content: space-between;
+  }
 }
 
-@media screen and (max-width: 800px) {
-  .menu {
+@media screen and (max-width: 799px) {
+  .menu__content {
     display: none;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .menu.show-menu {
+  .menu__content.show-menu {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-color);
@@ -52,20 +60,27 @@ export default {
     text-align: center;
     justify-content: center;
     position: absolute;
-    top: 60px;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 0;
-
-    a {
-      padding-right: 0;
-    }
   }
 }
 
 .hamburger {
   z-index: 10;
+}
+
+.hamburger-inner {
+  background-color: var(--link-color) !important;
+}
+
+.hamburger-inner::before {
+  background-color: var(--link-color) !important;
+}
+
+.hamburger-inner::after {
+  background-color: var(--link-color) !important;
 }
 
 @media screen and (min-width: 800px) {

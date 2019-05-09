@@ -69,3 +69,12 @@ a {
 .float-right {
   float: right;
 }
+
+.mt0 {
+  margin-top: 0;
+}
+
+a.active--exact.active.pagination {
+  color: rgba(0, 0, 0, 0.8);
+  cursor: default;
+}

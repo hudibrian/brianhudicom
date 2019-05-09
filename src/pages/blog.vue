@@ -10,7 +10,7 @@
       />
       <Pager
         :linkClass="'pagination'"
-        class="textCenter"
+        class="textCenter content-box"
         :info="$page.allPost.pageInfo"
       />
     </div>

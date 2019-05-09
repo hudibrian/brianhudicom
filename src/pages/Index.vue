@@ -3,7 +3,10 @@
     <!-- Author intro -->
     <IntroDetail class="mt2em" />
     <div class="mt2em content-box">
+      <h3 class="mt0">Most Recent Blog Posts</h3>
+
       <RecentPosts
+        class="mt2em"
         v-for="edge in $page.posts.edges"
         :key="edge.node.id"
         :post="edge.node"

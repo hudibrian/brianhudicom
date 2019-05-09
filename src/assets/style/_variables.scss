@@ -13,9 +13,10 @@ body {
   --link-color: #6b17e6;
   --border-color: rgba(0, 0, 0, 0.1);
   --space: 1.5rem;
-  --content-width: 860px;
+  --content-width: 800px;
   --header-height: 60px;
   --radius: 5px;
+  --bg-image: url('../images/bg-pattern.png');
 }
 
 // Make  things smaller for mobile
@@ -27,15 +28,4 @@ body {
     --space: 1.5rem;
     --header-height: 60px;
   }
-}
-
-// Override variables for Dark theme
-body[data-theme='dark'] {
-  --bg-color: #0e0613;
-  --bg-content-color: #401c5e;
-  --bg-code: rgba(0, 0, 0, 0.3);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --body-color: #ced8de;
-  --title-color: #fff;
-  --link-color: #af9cef;
 }

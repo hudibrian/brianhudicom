@@ -1,9 +1,9 @@
 <template>
   <div class="recent-post">
     <g-link class="recent-post__link" :to="post.path">
-      <h2 class="recent-post__title">
+      <h3 class="recent-post__title">
         {{ post.title }}
-      </h2>
+      </h3>
     </g-link>
     <p>
       {{ post.description }}...
