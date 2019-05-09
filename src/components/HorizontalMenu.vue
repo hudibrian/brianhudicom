@@ -2,7 +2,6 @@
   <div class="menu">
     <button
       class="hamburger hamburger--spin"
-      name="menu button"
       type="button"
       :class="isMenu ? 'is-active' : ''"
       v-on:click="showMenu()"
