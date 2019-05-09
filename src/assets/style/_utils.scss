@@ -1,0 +1,84 @@
+.text-center {
+  text-align: center;
+}
+
+.space-bottom {
+  margin-bottom: var(--space);
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+  grid-template-areas:
+    'left header  right'
+    'left content right'
+    'left content right'
+    'left footer  right';
+}
+
+@media screen and (max-width: 800px) {
+  .app-grid {
+    grid-template-columns: 1fr 100% 1fr;
+  }
+}
+
+.pagination {
+  padding: 0.2em;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.small-text {
+  font-size: 0.8em;
+}
+
+.pl5px {
+  padding-left: 5px;
+}
+
+.pb5px {
+  padding-bottom: 5px;
+}
+
+.float-right {
+  float: right;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.mt2em {
+  margin-top: 2em;
+}
+
+a.active--exact.active.pagination {
+  color: rgba(0, 0, 0, 0.8);
+  cursor: default;
+}
