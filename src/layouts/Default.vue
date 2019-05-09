@@ -22,6 +22,7 @@
     </main>
 
     <footer class="footer">
+      <socials></socials>
       <span class="footer__copyright">
         Copyright Brian Hudi {{ new Date().getFullYear() }}.
       </span>
@@ -34,6 +35,7 @@ import Logo from "~/components/Logo.vue";
 import ToggleTheme from "~/components/ToggleTheme.vue";
 import HeaderLogoAndTitle from "~/components/HeaderLogoAndTitle.vue";
 import HorizontalMenu from "~/components/HorizontalMenu.vue";
+import socials from "~/components/socials.vue";
 
 export default {
   props: {
@@ -43,7 +45,8 @@ export default {
     Logo,
     ToggleTheme,
     HeaderLogoAndTitle,
-    HorizontalMenu
+    HorizontalMenu,
+    socials
   }
 };
 </script>
@@ -84,6 +87,7 @@ export default {
 .footer {
   grid-area: footer;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: calc(var(--space) / 2);

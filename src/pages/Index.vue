@@ -62,8 +62,5 @@ export default {
 </script>
 
 <style lang="scss">
-.mt2em {
-  margin-top: 2em;
-}
 </style>
 
