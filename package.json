@@ -18,9 +18,8 @@
     "@gridsome/transformer-json": "^0.1.0",
     "@gridsome/transformer-remark": "^0.2.0",
     "gridsome": "^0.5.0",
-    "sweetalert": "^2.1.2",
     "vue-svg-loader": "^0.12.0",
-    "vue-sweetalert2": "^1.6.4"
+    "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "node-sass": "^4.11.0",

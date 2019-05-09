@@ -72,11 +72,7 @@ export default {
         })
       })
         .then(() => {
-          this.$swal(
-            "Thank you for reaching out.  I will respond when I get the chance.",
-            "",
-            "success"
-          ).then(() => this.$router.push("/"));
+          this.$router.push("/contact/success");
         })
         .catch(error => this.$swal(error, "", "error"));
     }
