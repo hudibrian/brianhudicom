@@ -10,32 +10,36 @@
         <form
           class="form"
           name="contact"
-          data-netlify-recaptcha="true"
           data-netlify="true"
+          v-on:submit.prevent="handleSubmit"
+          data-netlify-honeypot="bot-field"
         >
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label> Don’t fill this out: <input name="bot-field" /> </label>
+          </p>
           <input
             required
             name="name"
-            v-model="contact.name"
             placeholder="Name"
             type="text"
             autocomplete="off"
+            v-model="formData.name"
           />
           <input
             required
             name="email"
-            v-model="contact.email"
             placeholder="E-mail"
             type="email"
             autocomplete="off"
+            v-model="formData.email"
           />
           <textarea
             name="message"
-            v-model="contact.message"
             rows="4"
             placeholder="Message"
+            v-model="formData.message"
           ></textarea>
-          <div data-netlify-recaptcha="true"></div>
           <button class="button" type="submit">Send</button>
         </form>
       </div>
@@ -45,14 +49,37 @@
 
 <script>
 export default {
-  data: () => {
+  data() {
     return {
-      contact: {
-        name: "",
-        email: "",
-        message: ""
-      }
+      formData: {}
     };
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
+    },
+    handleSubmit(e) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: this.encode({
+          "form-name": e.target.getAttribute("name"),
+          ...this.formData
+        })
+      })
+        .then(() => {
+          this.$swal(
+            "Thank you for reaching out.  I will respond when I get the chance.",
+            "",
+            "success"
+          ).then(() => this.$router.push("/"));
+        })
+        .catch(error => this.$swal(error, "", "error"));
+    }
   }
 };
 </script>
