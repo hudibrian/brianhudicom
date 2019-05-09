@@ -1,7 +1,8 @@
 module.exports = {
   siteName: 'Brian Hudi',
   siteUrl: 'https://www.brianhudi.com',
-  siteDescription: "Let's change the world together.",
+  siteDescription:
+    "Hi, I'm Brian Hudi. I help people bring their ideas to life, with code. Let's change the world together.",
   icon: 'src/assets/images/author.jpg',
   favicon: 'src/assets/images/author.jpg',
   touchicon: 'src/assets/images/author.jpg',
