@@ -10,6 +10,7 @@
       <HorizontalMenu class="header__right">
         <g-link to="/">Home</g-link>
         <g-link to="/blog">Blog</g-link>
+        <g-link to="/lists">Lists</g-link>
         <g-link to="/contact">Contact</g-link>
         <g-link to="/about">About</g-link>
       </HorizontalMenu>

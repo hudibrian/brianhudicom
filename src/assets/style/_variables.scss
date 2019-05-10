@@ -18,6 +18,11 @@ body {
   --header-height: 60px;
   --radius: 5px;
   --bg-image: url('../images/bg-pattern.png');
+  --header-gradient: linear-gradient(
+    45deg,
+    rgba(147, 63, 203, 1) 0%,
+    rgba(147, 214, 218, 1) 100%
+  );
 }
 
 // Make  things smaller for mobile

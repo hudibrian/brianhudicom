@@ -25,6 +25,14 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
+        typeName: 'List',
+        path: 'content/lists/*.md',
+        route: 'list/:slug',
+      },
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
         typeName: 'PageContent',
         path: 'content/pages/*.md',
       },
