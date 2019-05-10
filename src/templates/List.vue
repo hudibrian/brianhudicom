@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="post-title">
+    <div class="post-title mt2em">
       <h1 class="post-title__text">{{ $page.list.title }}</h1>
     </div>
 

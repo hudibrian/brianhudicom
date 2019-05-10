@@ -1,19 +1,21 @@
 <template>
   <div id="app" class="app-grid">
     <header class="header">
-      <HeaderLogoAndTitle
-        class="header__left"
-        :showLogo="showLogo"
-        :title="'Brian Hudi'"
-      ></HeaderLogoAndTitle>
+      <nav class="header__content">
+        <HeaderLogoAndTitle
+          class="header__content__left"
+          :showLogo="showLogo"
+          :title="'Brian Hudi'"
+        ></HeaderLogoAndTitle>
 
-      <HorizontalMenu class="header__right">
-        <g-link to="/">Home</g-link>
-        <g-link to="/blog">Blog</g-link>
-        <g-link to="/lists">Lists</g-link>
-        <g-link to="/contact">Contact</g-link>
-        <g-link to="/about">About</g-link>
-      </HorizontalMenu>
+        <HorizontalMenu class="header__content__right">
+          <g-link to="/">Home</g-link>
+          <g-link to="/blog">Blog</g-link>
+          <g-link to="/lists">Lists</g-link>
+          <g-link to="/contact">Contact</g-link>
+          <g-link to="/about">About</g-link>
+        </HorizontalMenu>
+      </nav>
     </header>
 
     <div></div>
@@ -59,24 +61,37 @@ export default {
 
 .header {
   grid-area: header;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   min-height: var(--header-height);
+  background: var(--header-gradient);
   padding: 0 15px;
   z-index: 10;
-  font-size: 1.2em;
 
-  &__left {
+  &__content {
     display: flex;
-    flex: 3 auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto 0;
+    padding: 0px 15px 0;
+
+    &__left {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex: 1;
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      flex: 1;
+    }
   }
 
-  &__right {
-    display: flex;
-    flex: 1 auto;
-    justify-content: flex-end;
-    align-items: center;
+  a {
+    color: white;
   }
 }
 

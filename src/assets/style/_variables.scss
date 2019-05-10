@@ -5,7 +5,7 @@ html {
 
 // Light default theme
 body {
-  --bg-color: #f8f8f8;
+  --bg-color: #e9e9e9;
   --bg-content-color: #fff;
   --bg-code: #fffbf3;
   --body-color: #2b2a2a;
@@ -19,9 +19,9 @@ body {
   --radius: 5px;
   --bg-image: url('../images/bg-pattern.png');
   --header-gradient: linear-gradient(
-    45deg,
-    rgba(147, 63, 203, 1) 0%,
-    rgba(147, 214, 218, 1) 100%
+    90deg,
+    rgba(114, 85, 156, 1) 41%,
+    rgba(79, 27, 157, 1) 100%
   );
 }
 

@@ -38,6 +38,7 @@ export default {
 
 <style lang="scss">
 .menu {
+  margin: 15px 0;
   &__content {
     display: flex;
     flex: 1 auto;
@@ -55,7 +56,7 @@ export default {
   .menu__content.show-menu {
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-color);
+    background: var(--header-gradient);
     font-size: 2em;
     text-align: center;
     justify-content: center;
@@ -72,15 +73,15 @@ export default {
 }
 
 .hamburger-inner {
-  background-color: var(--link-color) !important;
+  background-color: white !important;
 }
 
 .hamburger-inner::before {
-  background-color: var(--link-color) !important;
+  background-color: white !important;
 }
 
 .hamburger-inner::after {
-  background-color: var(--link-color) !important;
+  background-color: white !important;
 }
 
 @media screen and (min-width: 800px) {

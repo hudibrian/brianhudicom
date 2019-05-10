@@ -120,8 +120,8 @@ export default {
 }
 
 .contact-form .button {
-  background: var(--link-color);
-  border: solid 1px var(--link-color);
+  background: var(--header-gradient);
+  border: solid 1px var(--header-gradient);
   color: white;
   cursor: pointer;
   padding: 10px 50px;
@@ -131,7 +131,7 @@ export default {
 
 .contact-form .button:hover {
   background: var(--link-color-hover);
-  border: solid 1px var(--link-color-hover);
+  border: solid 1px var(--header-gradient);
 }
 
 .contact-form input[type="email"],

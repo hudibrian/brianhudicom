@@ -1,6 +1,10 @@
 <template>
   <Layout>
-    <h1 class="tag-title text-center space-bottom"># {{ $page.tag.title }}</h1>
+    <div class="mt2em">
+      <h1 class="tag-title text-center space-bottom">
+        {{ $page.tag.title }}
+      </h1>
+    </div>
 
     <div class="posts">
       <PostCard

@@ -1,5 +1,5 @@
 ---
-title: 'Books that I am reading or have read'
+title: 'Books Being Read & Book Reviews'
 category: 'Books'
 slug: 'books'
 description: 'A list of books that I am currently reading, and short summaries or reviews of books that I have previously read.'

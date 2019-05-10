@@ -24,7 +24,7 @@
   display: grid;
   grid-template-columns: 1fr 800px 1fr;
   grid-template-areas:
-    'left header  right'
+    'header header  header'
     'left content right'
     'left content right'
     'left footer  right';
