@@ -44,6 +44,12 @@ module.exports = {
         typeName: 'LandingData',
       },
     },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'UA-124376316-1',
+      },
+    },
   ],
   transformers: {
     //Add markdown support to all file-system sources
