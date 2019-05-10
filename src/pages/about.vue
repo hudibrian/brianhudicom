@@ -126,5 +126,6 @@ export default {};
 
 .companies {
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 </style>
