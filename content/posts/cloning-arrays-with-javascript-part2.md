@@ -9,9 +9,9 @@ tags: [javascript, tips & tricks]
 description: 'I wrote a post about cloning arrays, and a piece of code I had found in a code base I was working on. After writing that post, a couple of readers brought some alternative methods, and concerns to my attention. That is what I will cover in this post'
 ---
 
-##### [Cloning an Array with JavaScript: Part 1](https://brianhudi.com/cloning-arrays-with-javascript)
+##### [Cloning an Array with JavaScript: Part 1](https://brianhudi.com/blog/cloning-arrays-with-javascript)
 
-Yesterday, [I wrote a post about cloning arrays](https://brianhudi.com/cloning-arrays-with-javascript), and a piece of code I had found in a code base I was working on. After writing that post, a couple of readers brought some alternative methods, and concerns to my attention. That is what I will cover in this post.
+Yesterday, [I wrote a post about cloning arrays](https://brianhudi.com/blog/cloning-arrays-with-javascript), and a piece of code I had found in a code base I was working on. After writing that post, a couple of readers brought some alternative methods, and concerns to my attention. That is what I will cover in this post.
 
 _For context please check out the first post I linked to up above, it is a very quick read. I promise!_
 

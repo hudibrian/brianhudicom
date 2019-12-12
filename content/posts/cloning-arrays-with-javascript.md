@@ -40,7 +40,7 @@ function cloneArray(arr) {
 }
 ```
 
-Or if you are familiar with [Arrow Functions](https://www.brianhudi.com/js-snack-1) it could look like this:
+Or if you are familiar with [Arrow Functions](https://www.brianhudi.com/blog/js-snack-1) it could look like this:
 
 ```javascript
 const cloneArray = arr => arr.slice(0);

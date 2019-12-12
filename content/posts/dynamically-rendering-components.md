@@ -30,7 +30,7 @@ console.log(newNums); // [2,3,4,5,6]
 
 We start with an array of numbers (nums), and then we define a new array of numbers (newNums) that is equal to the result of calling `.map()` on `nums`. In the `.map` function we pass it a function that returns the current number being iterated, plus one. And as you can see, if you run this code, it will output an array of `[2, 3, 4, 5, 6]` to the console.
 
-If the syntax of the .map() in the code above is unfamiliar to you, check out my blog post on [Arrow Functions](https://www.brianhudi.com/js-snack-1)
+If the syntax of the .map() in the code above is unfamiliar to you, check out my blog post on [Arrow Functions](https://www.brianhudi.com/blog/js-snack-1)
 
 ### Applying this concept to react
 
