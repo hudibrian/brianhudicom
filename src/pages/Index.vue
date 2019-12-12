@@ -3,24 +3,26 @@
     <!-- Author intro -->
     <IntroDetail class="mt2em" />
     <div class="mt2em content-box">
-      <h2 class="mt0">Most Recent Blog Posts</h2>
+      <h2 class="mt0 mb0 text-center">Most Recent Blog Posts</h2>
+      <g-link class="small-text pl5px pb5px float-right" to="/blog"
+        >see them all 📚</g-link
+      >
+    </div>
 
+    <div class="flex-row wrap">
       <RecentPosts
         class="mt2em"
         v-for="edge in $page.posts.edges"
         :key="edge.node.id"
         :post="edge.node"
       />
-      <g-link class="small-text pl5px pb5px float-right" to="/blog"
-        >see them all 📚</g-link
-      >
     </div>
   </Layout>
 </template>
 
 <page-query>
 query Posts {
-  posts: allPost (perPage: 3) {
+  posts: allPost (perPage: 4) {
     edges {
       node {
         id
@@ -62,5 +64,8 @@ export default {
 </script>
 
 <style lang="scss">
+.wrap {
+  flex-wrap: wrap;
+}
 </style>
 
