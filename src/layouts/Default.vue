@@ -43,7 +43,7 @@
             novalidate
           >
             <div id="mc_embed_signup_scroll">
-              <label for="mce-EMAIL">Subscribe for weekly updates!</label>
+              <label for="mce-EMAIL">Subscribe for monthly updates!</label>
               <input
                 type="email"
                 value=""
