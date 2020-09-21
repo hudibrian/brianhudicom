@@ -6,7 +6,7 @@
       </h1>
       <p>
         I'm Brian, and I'm a software developer. I have been creating on the web
-        for 3 years, and I love it. I love to teach/help others through blog
+        for 6 years, and I love it. I love to teach/help others through blog
         posts, training, speaking, and any other content I produce.
       </p>
       <h3>A little more...</h3>
