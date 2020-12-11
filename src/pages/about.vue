@@ -14,7 +14,7 @@
         I am passionate about development, learning, and teaching. I aspire to
         be employed teaching others the wonders of development, and helping them
         be the best they can be. If I am not actively working on a project you
-        will probably find me spending time with my beautiful wife Sidney 💍,
+        will probably find me spending time with my beautiful wife 💍,
         reading 📖, lifting 🏋️‍♂️, or playing video games 🎮.
       </p>
 
